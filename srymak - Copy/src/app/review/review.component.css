@@ -1,0 +1,28 @@
+.review-card {
+  background: #000;
+  width: fit-content;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  max-width: 18rem;
+  margin: auto;
+  word-wrap: break-word;
+  user-select: none;
+  max-height: 350px;
+}
+
+.review-card img {
+  border: 2px solid black;
+  width: 80px;
+  height:80px;
+  border-radius: 50%;
+  object-fit:cover;
+}
+.review-card-body{
+  max-height: 200px;
+  overflow: auto;
+}
+.overflow {
+  overflow:auto;
+}

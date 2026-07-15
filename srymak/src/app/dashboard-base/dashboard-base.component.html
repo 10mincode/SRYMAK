@@ -1,0 +1,90 @@
+<div class="dashboard">
+  <!-- <div class="sidebar" id="sidebar" (click)="tooglSidebar()">
+    <div class="profile" id="profile" (click)="$event.stopPropagation()">
+      <div class="section1">
+        <i class="fas fa-user-alt" style="font-size: 40px"></i>
+      </div>
+      <div class="section2">
+        <div style="margin-right: 1rem;display: flex;flex-direction: column;align-items: center;">
+          <div class="section1">
+            <i class="fas fa-user-alt" style="font-size: 70px"></i>
+          </div>
+
+        </div>
+        <div class="details">
+          <p class="details-text" style="font-size: 110%;;">{{details.name}}</p>
+          <p class="details-text">Grade - {{details.grade}}</p>
+          <p class="details-text">Batch - A</p>
+        </div>
+      </div>
+    </div>
+    <div class="pages flex-1 my-5" id="pages" (click)="$event.stopPropagation()">
+      <div class="page" routerLink="/dashboard">
+        <div class="section1 w-100 justify-content-center">
+          <i class="fas fa-sign-out-alt" style="font-size: 40px; color:whitesmoke;"></i>
+        </div>
+        <div class="section2 ps-3">
+          <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; color:black;"></i>
+          <h4 style="font-weight: 700;">DASHBOARD</h4>
+        </div>
+      </div>
+      <div class="page" (click)="alert('This option is available after session Starts')">
+        <div class="section1 w-100 justify-content-center">
+          <i class="fas fa-sign-out-alt" style="font-size: 40px; color:whitesmoke;"></i>
+        </div>
+        <div class="section2 ps-3">
+          <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; color:black;"></i>
+          <h4 style="font-weight: 700;">HOMEWORK</h4>
+        </div>
+      </div>
+      <div class="page" (click)="alert('This option is available after session Starts')">
+        <div class="section1 w-100 justify-content-center">
+          <i class="fas fa-sign-out-alt" style="font-size: 40px; color:whitesmoke;"></i>
+        </div>
+        <div class="section2 ps-3">
+          <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; color:black;"></i>
+          <h4 style="font-weight: 700;">QUIZ</h4>
+        </div>
+      </div>
+      <div class="page" (click)="alert('This option is available after session Starts')">
+        <div class="section1 w-100 justify-content-center">
+          <i class="fas fa-sign-out-alt" style="font-size: 40px; color:whitesmoke;"></i>
+        </div>
+        <div class="section2 ps-3">
+          <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; color:black;"></i>
+          <h4 style="font-weight: 700;">RESULT</h4>
+        </div>
+      </div>
+      <div class="page" routerLink="/profile">
+        <div class="section1 w-100 justify-content-center">
+          <i class="fas fa-sign-out-alt" style="font-size: 40px; color:whitesmoke;"></i>
+        </div>
+        <div class="section2 ps-3">
+          <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; color:black;"></i>
+          <h4 style="font-weight: 700;">PROFILE</h4>
+        </div>
+      </div>
+    </div>
+    <div class="logout" id="logout" (click)="$event.stopPropagation()">
+      <div class="section1 w-100 justify-content-center" (click)="logout_user()" style="cursor:pointer">
+        <i class="fas fa-sign-out-alt" style="font-size: 40px; color:red;"></i>
+      </div>
+      <div class="section2 ps-3" (click)="logout_user()" style="cursor:pointer;">
+        <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; "></i>
+        <h4 style="font-weight: 700;">LOGOUT</h4>
+      </div>
+    </div>
+  </div> -->
+  <div class="content py-4 px-5">
+  <router-outlet #o="outlet"></router-outlet>
+  <div class="section2 p-3 mt-5  bg-warning rounded" (click)="router.navigate(['home'])"
+    style="cursor:pointer; width:fit-content">
+    <!-- <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; "></i> -->
+    <h4 style="font-weight: 700;" class="text-white">GO BACK to home page</h4>
+  </div>
+<div class="section2 p-3 mt-5  bg-secondary rounded bg-danger" (click)="logout_user()" style="cursor:pointer; width:fit-content">
+  <!-- <i class="fas fa-sign-out-alt pe-4" style="font-size: 40px; "></i> -->
+  <h4 style="font-weight: 700;" class="text-white">LOGOUT</h4>
+</div>
+  </div>
+</div>

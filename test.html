@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tester</title>
+</head>
+<style type="text/css">
+	input::marker{
+		background-color: #f00;
+		width: 5rem
+	}
+
+</style>
+<body>
+	<div>
+	<input type="radio" name="radio1" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio1" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio1" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio1" value="abcd" onclick="dothis(this.name)">
+	</div>
+	<div>
+	<input type="radio" name="radio2" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio2" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio2" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio2" value="abcd" onclick="dothis(this.name)">
+	</div>
+
+	<div>
+	<input type="radio" name="radio3" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio3" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio3" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio3" value="abcd" onclick="dothis(this.name)">
+	</div>
+	<div>
+	<input type="radio" name="radio4" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio4" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio4" value="abcd" onclick="dothis(this.name)">
+	<input type="radio" name="radio4" value="abcd" onclick="dothis(this.name)">
+	</div>
+
+</body>
+<script type="text/javascript">
+	function dothis(name){
+		allradio=document.getElementsByName(`${name}`);
+		for (var i = 0; i < allradio.length; i++) {
+			allradio[i].disabled="true";
+		}
+	}
+</script>
+</html>

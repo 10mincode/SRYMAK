@@ -1,0 +1,45 @@
+<div class="mainbox d-flex p-5 pt-2 flex-column">
+  <div class="theme_box d-flex justify-content-end p-2">
+    <div *ngFor="let theme of themes" class="theme me-2" (click)="setTheme(theme)">
+      <img src="{{theme.image}}" width="50" height="50" alt="">
+    </div>
+    <div class="full_screen_btn ms-2 p-2 d-flex align-items-center" (click)="fullScreen()" style=" background-color: #00000080;
+  border-radius: 5px; aspect-ratio: 1 / 1;">
+<img width="35" height="35"  src="../../assets/fullscreen.png">
+    </div>
+  </div>
+  <div class="question_box d-flex flex-column  w-100" id="question-box">
+    <div class="question_div" ><h3>{{question.question}}</h3></div>
+    <div class="option_div row">
+      <div class="option">
+      <input type="radio" name="{{question.id}}" id="{{question.id}}a" (click)="dothis($event)" [attr.data-answer]="question.answers[0]">
+      <label for="{{question.id}}a"><h3>{{question.answers[0]}}</h3></label></div>
+      <div class="option">
+
+      <input type="radio" name="{{question.id}}" id="{{question.id}}b" (click)="dothis($event)" [attr.data-answer]="question.answers[1]">
+      <label for="{{question.id}}b"><h3>{{question.answers[1]}}</h3></label></div>
+      <div class="option">
+
+      <input type="radio" name="{{question.id}}" id="{{question.id}}c" (click)="dothis($event)" [attr.data-answer]="question.answers[2]">
+      <label for="{{question.id}}c"><h3>{{question.answers[2]}}</h3></label></div>
+      <div class="option">
+
+      <input type="radio" name="{{question.id}}" id="{{question.id}}d" (click)="dothis($event)" [attr.data-answer]="question.answers[3]">
+      <label for="{{question.id}}d"><h3>{{question.answers[3]}}</h3></label></div>
+    </div>
+  </div>
+  <div class="result_box w-100 d-none" id="result-box">
+    <div>
+      <div class="result_stu_columns row margin-auto d-flex justify-content-between">
+        <p style=" width:fit-content">RANK</p>
+        <p style=" width:fit-content">NAME</p>
+        <p style=" width:fit-content">SCORE</p>
+      </div>
+      <div class="d-flex justify-content-between align-items-center student-result" *ngFor="let item of student_details; index as i">
+        <p>{{item.rank}}</p>
+        <div class="d-flex justify-content-between align-items-center"><img src="../../assets/white.png" width="50" height="50" alt="">&nbsp;&nbsp;<P>{{item.name}}</P></div>
+        <p>{{item.points}}</p>
+      </div>
+    </div>
+  </div>
+</div>

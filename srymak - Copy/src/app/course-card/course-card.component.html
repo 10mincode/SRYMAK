@@ -1,0 +1,64 @@
+<div class="d-flex align-items-center h-100 p-3">
+<div class="course-card">
+  <h4 class="fs-4 pb-5">Course Plan</h4>
+  <div class="card-body">
+    <div class="d-flex flex-column justify-content-center">
+      <!-- <img src="./../../assets/mainicon.png" style="width:70px;height:70px" alt=""> -->
+      <h5 class="fs-5">{{course_details.name}}</h5>
+      <h6>{{course_details.no_sub}} Subjects</h6>
+      <h6>{{course_class_time}} min/Class</h6>
+    </div>
+    <div class="d-flex flex-column text-end">
+      <span class="text-success" style="font-size:smaller">({{((+course_details.fees-course_details.fees2)*100/+course_details.fees).toFixed(1)}}% off)</span>
+      <h4>₹{{course_details.fees2}}</h4>
+      <h6 class="text-secondary"><s>₹{{course_details.fees}}</s></h6>
+    </div>
+  </div>
+  <button class="schedule-btn text-white fs-4" style="background: #bf4500 !important;" (click)="openOrCloseModal('registermodal')">Book Trial</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- !-- <div class="course-card">
+  <div class="card-head">
+    <h2>{{course_details.name}}</h2>
+    <a (click)="openOrCloseModal('content')"><i class="fas fa-arrow-right"></i></a>
+
+  </div>
+  <div class="card-body">
+    <h4>subjects : {{course_details.no_subjects}}</h4>
+    <h4>course fee : {{course_details.fees}}</h4>
+  </div>
+</div> --
+<div class="card m-auto">
+  <div class="d-flex flex-column align-items-center justify-content-center p-3 course-card-image"> <img
+      class="col-md-1 mb-2 " src="{{course_details.image}}"
+      style="height:fit-content;width:8rem;border-radius:5px;aspect-ratio: 4 / 3" alt="Card image cap">
+    !-- <button (click)="openOrCloseModal('content')"
+            style="border: none; background-color:darkgreen; color:whitesmoke; font-weight:600; border-radius:5px">CHECK
+            MORE</button> --
+
+  </div>
+  <div class="card-body mt-4 col-md-9">
+    <h5 class=" ps-2 card-title" style="font-weight: 700;">{{course_details.name}}</h5>
+    <h6 class="ps-2 " style="font-weight: 400;">{{course_details.message}}</h6>
+    <hr class="mx-2">
+    <div class="d-flex justify-content-between p-2 pt-1 align-items-center">
+      <div class="d-flex">
+        <h6 style="font-weight:800; color:grey" class="me-3" *ngif="course_details.new_fees">
+          <s>₹{{course_details.new_fees}}</s></h6>
+        <h6 style="font-weight:800; color:darkgreen" align="right"> ₹{{course_details.fees}}/Month</h6>
+      </div>
+    </div>
+  </div>
+</div> -->

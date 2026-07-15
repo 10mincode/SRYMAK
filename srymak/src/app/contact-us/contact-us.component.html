@@ -1,0 +1,35 @@
+<div class="topsection row" style="margin: 0 !important">
+  <div class="leftside col-md-6 col-xs-12 d-none d-md-flex">
+<img src="../../assets/34983924_ccexpress.png">
+  </div>
+  <div class="rightside col-md-6 col-xs-12">
+    <form style="background-color:white; width:90%;margin:auto;" class="p-5" [formGroup]="contactform">
+      <h2 style="text-shadow:none; text-align:left; padding-bottom:3rem;">CONTACT US</h2>
+      <div class="mb-4" style="text-align: left;">
+      <input formControlName="name" style="width: 100%;" class="p-2 " placeholder="Name" type="text">
+      <small *ngIf="contactform.controls.name.touched && contactform.controls.name.invalid" align="left" class="text-danger">Name is Required</small>
+      </div>
+      <div class="mb-4" style="text-align: left;">
+      <input formControlName="email" style="width: 100%;" class="p-2" placeholder="Email" type="text">
+      <small *ngIf="contactform.controls.email.touched && contactform.controls.email.invalid" emailalign="left" class="text-danger">Enter a valid email</small>
+      </div>
+      <div class="mb-4" style="text-align: left;">
+      <input formControlName="mobile" style="width: 100%;" maxlength="10" class="p-2" placeholder="Mobile" type="text">
+      <small *ngIf="contactform.controls.mobile.touched && contactform.controls.mobile.invalid" align="left" class="text-danger">Enter a valid Mobile Number</small>
+      </div>
+      <div class="mb-4" style="text-align: left;">
+      <textarea formControlName="message" id="mymessage" maxlength="1000" style="width: 100%;resize:none; background-color:whitesmoke !important" placeholder="Message" class="p-2"></textarea>
+      <div class="d-flex justify-content-between">
+        <small *ngIf="contactform.controls.message.touched && contactform.controls.message.invalid" align="left" class="text-danger">Message should be between 10 to 200 characters</small><p></p>
+        <small>{{contactform.controls.message.value?.length || 0}}/1000</small></div>
+      </div>
+
+      <button (click)="send_message()" [disabled]="contactform.invalid" type="button" style="
+  padding: 0.25rem 0.5rem;
+  border: none;
+  text-align:left;
+  background:  #ffa500;
+  font-weight: bolder;">SEND <i class="fas fa-arrow-right"></i></button>
+    </form>
+  </div>
+</div>

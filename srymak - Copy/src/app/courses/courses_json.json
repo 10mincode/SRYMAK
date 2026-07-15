@@ -1,0 +1,986 @@
+[
+  [
+    {
+    "name":"Class 6",
+    "fees":"24000",
+    "fees2":"18000",
+    "no_sub":"4",
+    "subjects":["Math","English","Science","SSc"],
+    "timetable": {
+      "mon": [
+        "SSc",
+        "Math",
+        "English"
+      ],
+      "tue": [
+        "Science",
+        "SSc",
+        "Math"
+      ],
+      "wed": [
+        "Math",
+        "Math",
+        "Science"
+      ],
+      "thu": [
+        "English",
+        "Math",
+        "Science"
+      ],
+      "fri": [
+        "English",
+        "SSc",
+        "Science"
+      ],
+      "sat": [
+        "Test"
+      ]}
+    },
+    {
+    "name":"Class 6",
+    "fees":"20000",
+    "fees2":"14000",
+    "no_sub":"2",
+    "subjects":["Math","Science"],
+    "timetable": {
+      "mon": [
+        "Math"
+      ],
+      "tue": [
+        "Science",
+        "Math"
+      ],
+      "wed": [
+        "Math",
+        "Math",
+        "Science"
+      ],
+      "thu": [
+        "Math",
+        "Science"
+      ],
+      "fri": [
+        "Science"
+      ],
+      "sat": [
+        "Test"
+      ]}
+    },
+    {
+    "name":"Class 6",
+    "fees":"22000",
+    "fees2":"16000",
+    "no_sub":"3",
+    "subjects":["Math","Science","English"],
+    "timetable": {
+      "mon": [
+        "Math",
+        "English"
+      ],
+      "tue": [
+        "Science",
+        "Math"
+      ],
+      "wed": [
+        "Math",
+        "Math",
+        "Science"
+      ],
+      "thu": [
+        "English",
+        "Math",
+        "Science"
+      ],
+      "fri": [
+        "English",
+        "Science"
+      ],
+      "sat": [
+        "Test"
+      ]}
+    },
+    {
+      "name": "Class 6",
+      "fees": "22000",
+      "fees2": "16000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "SSc",
+          "Math"
+        ],
+        "tue": [
+          "Science",
+          "SSc",
+          "Math"
+        ],
+        "wed": [
+          "Math",
+          "Math",
+          "Science"
+        ],
+        "thu": [
+          "Math",
+          "Science"
+        ],
+        "fri": [
+          "SSc",
+          "Science"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },40
+  ],
+  [
+    {
+      "name": "Class 7",
+      "fees": "24000",
+      "fees2": "18000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "English",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "SSc",
+          "Math"
+        ],
+        "tue": [
+          "English",
+          "Math",
+          "SSc"
+        ],
+        "wed": [
+          "Science",
+          "SSc",
+          "Math"
+        ],
+        "thu": [
+          "Science",
+          "SSc",
+          "English"
+        ],
+        "fri": [
+          "Science",
+          "English",
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 7",
+      "fees": "20000",
+      "fees2": "14000",
+      "no_sub": "2",
+      "subjects": [
+        "Math",
+        "Science"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "Math"
+        ],
+        "tue": [
+          "Math"
+        ],
+        "wed": [
+          "Science",
+          "Math"
+        ],
+        "thu": [
+          "Science"
+        ],
+        "fri": [
+          "Science",
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 7",
+      "fees": "22000",
+      "fees2": "16000",
+      "no_sub": "3",
+      "subjects": [
+        "Math",
+        "Science",
+        "English"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "Math"
+        ],
+        "tue": [
+          "English",
+          "Math"
+        ],
+        "wed": [
+          "Science",
+          "Math"
+        ],
+        "thu": [
+          "Science",
+          "English"
+        ],
+        "fri": [
+          "Science",
+          "English",
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 7",
+      "fees": "22000",
+      "fees2": "16000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "SSc",
+          "Math"
+        ],
+        "tue": [
+          "Math",
+          "SSc"
+        ],
+        "wed": [
+          "Science",
+          "SSc",
+          "Math"
+        ],
+        "thu": [
+          "Science",
+          "SSc"
+        ],
+        "fri": [
+          "Science",
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },40
+  ],
+  [
+    {
+      "name": "Class 8",
+      "fees": "24000",
+      "fees2": "18000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "English",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Math",
+          "English",
+          "SSc"
+        ],
+        "tue": [
+          "Math",
+          "Science",
+          "English"
+        ],
+        "wed": [
+          "SSc",
+          "Science",
+          "English"
+        ],
+        "thu": [
+          "Math",
+          "Science",
+          "SSc"
+        ],
+        "fri": [
+          "Math",
+          "Science",
+          "SSc"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 8",
+      "fees": "20000",
+      "fees2": "14000",
+      "no_sub": "2",
+      "subjects": [
+        "Math",
+        "Science"
+      ],
+      "timetable": {
+        "mon": [
+          "Math"
+        ],
+        "tue": [
+          "Math",
+          "Science"
+        ],
+        "wed": [
+          "Science"
+        ],
+        "thu": [
+          "Math",
+          "Science"
+        ],
+        "fri": [
+          "Math",
+          "Science"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 8",
+      "fees": "22000",
+      "fees2": "16000",
+      "no_sub": "3",
+      "subjects": [
+        "Math",
+        "Science",
+        "English"
+      ],
+      "timetable": {
+        "mon": [
+          "Math",
+          "English"
+        ],
+        "tue": [
+          "Math",
+          "Science",
+          "English"
+        ],
+        "wed": [
+          "Science",
+          "English"
+        ],
+        "thu": [
+          "Math",
+          "Science"
+        ],
+        "fri": [
+          "Math",
+          "Science"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 8",
+      "fees": "22000",
+      "fees2": "16000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Math",
+          "SSc"
+        ],
+        "tue": [
+          "Math",
+          "Science"
+        ],
+        "wed": [
+          "SSc",
+          "Science"
+        ],
+        "thu": [
+          "Math",
+          "Science",
+          "SSc"
+        ],
+        "fri": [
+          "Math",
+          "Science",
+          "SSc"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    40
+  ],
+  [
+    {
+      "name": "Class 9",
+      "fees": "30000",
+      "fees2": "24000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "English",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Math",
+          "Science"
+        ],
+        "tue": [
+          "Math",
+          "Science"
+        ],
+        "wed": [
+          "Science",
+          "SSc"
+        ],
+        "thu": [
+          "Math",
+          "SSc"
+        ],
+        "fri": [
+          "Math",
+          "English"
+        ],
+        "sat": [
+          "English",
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 9",
+      "fees": "24000",
+      "fees2": "18000",
+      "no_sub": "2",
+      "subjects": [
+        "Math",
+        "Science"
+      ],
+      "timetable": {
+        "mon": [
+          "Math",
+          "Science"
+        ],
+        "tue": [
+          "Math",
+          "Science"
+        ],
+        "wed": [
+          "Science"
+        ],
+        "thu": [
+          "Math"
+        ],
+        "fri": [
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 9",
+      "fees": "26000",
+      "fees2": "21000",
+      "no_sub": "3",
+      "subjects": [
+        "Math",
+        "Science",
+        "English"
+      ],
+      "timetable": {
+        "mon": [
+          "Math",
+          "Science"
+        ],
+        "tue": [
+          "Math",
+          "Science"
+        ],
+        "wed": [
+          "Science"
+        ],
+        "thu": [
+          "Math"
+        ],
+        "fri": [
+          "Math",
+          "English"
+        ],
+        "sat": [
+          "English",
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 9",
+      "fees": "26000",
+      "fees2": "21000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Math",
+          "Science"
+        ],
+        "tue": [
+          "Math",
+          "Science"
+        ],
+        "wed": [
+          "Science",
+          "SSc"
+        ],
+        "thu": [
+          "Math",
+          "SSc"
+        ],
+        "fri": [
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    60
+  ],
+  [
+    {
+      "name": "Class 10",
+      "fees": "30000",
+      "fees2": "24000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "English",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "Math"
+        ],
+        "tue": [
+          "Science",
+          "Math"
+        ],
+        "wed": [
+          "SSc",
+          "Science"
+        ],
+        "thu": [
+          "English",
+          "Math"
+        ],
+        "fri": [
+          "English",
+          "Math"
+        ],
+        "sat": [
+          "SSc",
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 10",
+      "fees": "24000",
+      "fees2": "18000",
+      "no_sub": "2",
+      "subjects": [
+        "Math",
+        "Science"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "Math"
+        ],
+        "tue": [
+          "Science",
+          "Math"
+        ],
+        "wed": [
+          "Science"
+        ],
+        "thu": [
+          "Math"
+        ],
+        "fri": [
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 10",
+      "fees": "26000",
+      "fees2": "21000",
+      "no_sub": "3",
+      "subjects": [
+        "Math",
+        "Science",
+        "English"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "Math"
+        ],
+        "tue": [
+          "Science",
+          "Math"
+        ],
+        "wed": [
+          "Science"
+        ],
+        "thu": [
+          "English",
+          "Math"
+        ],
+        "fri": [
+          "English",
+          "Math"
+        ],
+        "sat": [
+          "Test"
+        ]
+      }
+    },
+    {
+      "name": "Class 10",
+      "fees": "26000",
+      "fees2": "21000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "Science",
+        "SSc"
+      ],
+      "timetable": {
+        "mon": [
+          "Science",
+          "Math"
+        ],
+        "tue": [
+          "Science",
+          "Math"
+        ],
+        "wed": [
+          "SSc",
+          "Science"
+        ],
+        "thu": [
+          "Math"
+        ],
+        "fri": [
+          "Math"
+        ],
+        "sat": [
+          "SSc",
+          "Test"
+        ]
+      }
+    },
+    60
+  ],
+  [
+    {
+      "name": "RMS and Sainik Class 6",
+      "fees": "24000",
+      "fees2": "18000",
+      "no_sub": "4",
+      "subjects": [
+        "Math",
+        "English",
+        "General Knowdedge",
+        "Reasoning"
+      ]
+    },
+    {
+      "name": "RMS and Sainik Class 9",
+      "fees": "30000",
+      "fees2": "24000",
+      "no_sub": "6",
+      "subjects": [
+        "Math",
+        "English",
+        "Science",
+        "SSc",
+        "Reasoning",
+        "Hindi"
+      ]
+    },
+    60
+  ],
+  [
+    {
+      "name": "Spoken English",
+      "fees": "15000",
+      "fees2": "11500",
+      "no_sub": "2",
+      "subjects": [
+        "English Grammar",
+        "English Debate"
+      ],
+      "timetable": {
+        "mon": [
+          "English Grammar"
+        ],
+        "tue": [
+          "English Grammar"
+        ],
+        "wed": [
+          "English Grammar"
+        ],
+        "thu": [
+          "English Grammar"
+        ],
+        "fri": [
+          "English Debate"
+        ],
+        "sat": [
+          "English Debate"
+        ]
+      }
+    },
+    60
+  ],
+  [
+    {
+      "name": "Class 11 PCM",
+      "fees": "40000",
+      "fees2": "36500",
+      "no_sub": "3",
+      "subjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics"
+      ],
+      "timetable": {
+        "mon": [
+          "Maths","Physics"
+        ],
+        "tue": [
+          "Chemistry","Maths"
+        ],
+        "wed": [
+          "Physics","Chemistry"
+        ],
+        "thu": [
+          "Maths","Physics"
+        ],
+        "fri": [
+          "Chemistry","Maths"
+        ],
+        "sat": [
+          "Physics","Chemistry"
+        ]
+      }
+    },
+    {
+      "name": "Class 11 PCB",
+      "fees": "40000",
+      "fees2": "36500",
+      "no_sub": "3",
+      "subjects": [
+        "Physics",
+        "Chemistry",
+        "Biology"
+      ],
+      "timetable": {
+        "mon": [
+          "Biology","Physics"
+        ],
+        "tue": [
+          "Chemistry","Biology"
+        ],
+        "wed": [
+          "Physics","Chemistry"
+        ],
+        "thu": [
+          "Biology","Physics"
+        ],
+        "fri": [
+          "Chemistry","Biology"
+        ],
+        "sat": [
+          "Physics","Chemistry"
+        ]
+      }
+    },
+    {
+      "name": "Class 11 Commerce",
+      "fees": "40000",
+      "fees2": "36500",
+      "no_sub": "3",
+      "subjects": [
+        "Accountancy",
+        "Economics",
+        "Business Studies"
+      ],
+      "timetable": {
+        "mon": [
+          "Accountancy","Economics"
+        ],
+        "tue": [
+          "Business Studies","Accountancy"
+        ],
+        "wed": [
+          "Economics","Business Studies"
+        ],
+        "thu": [
+          "Accountancy","Economics"
+        ],
+        "fri": [
+          "Business Studies","Accountancy"
+        ],
+        "sat": [
+          "Economics","Business Studies"
+        ]
+      }
+    },
+    60
+  ],
+  [
+    {
+      "name": "Class 12 PCM",
+      "fees": "40000",
+      "fees2": "36500",
+      "no_sub": "3",
+      "subjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics"
+      ],
+      "timetable": {
+        "mon": [
+          "Maths","Physics"
+        ],
+        "tue": [
+          "Chemistry","Maths"
+        ],
+        "wed": [
+          "Physics","Chemistry"
+        ],
+        "thu": [
+          "Maths","Physics"
+        ],
+        "fri": [
+          "Chemistry","Maths"
+        ],
+        "sat": [
+          "Physics","Chemistry"
+        ]
+      }
+    },
+    {
+      "name": "Class 12 PCB",
+      "fees": "40000",
+      "fees2": "36500",
+      "no_sub": "3",
+      "subjects": [
+        "Physics",
+        "Chemistry",
+        "Biology"
+      ],
+      "timetable": {
+        "mon": [
+          "Biology","Physics"
+        ],
+        "tue": [
+          "Chemistry","Biology"
+        ],
+        "wed": [
+          "Physics","Chemistry"
+        ],
+        "thu": [
+          "Biology","Physics"
+        ],
+        "fri": [
+          "Chemistry","Biology"
+        ],
+        "sat": [
+          "Physics","Chemistry"
+        ]
+      }
+    },
+    {
+      "name": "Class 12 Commerce",
+      "fees": "40000",
+      "fees2": "36500",
+      "no_sub": "3",
+      "subjects": [
+        "Accountancy",
+        "Economics",
+        "Business Studies"
+      ],
+      "timetable": {
+        "mon": [
+          "Accountancy","Economics"
+        ],
+        "tue": [
+          "Business Studies","Accountancy"
+        ],
+        "wed": [
+          "Economics","Business Studies"
+        ],
+        "thu": [
+          "Accountancy","Economics"
+        ],
+        "fri": [
+          "Business Studies","Accountancy"
+        ],
+        "sat": [
+          "Economics","Business Studies"
+        ]
+      }
+    },
+    60
+  ]
+]

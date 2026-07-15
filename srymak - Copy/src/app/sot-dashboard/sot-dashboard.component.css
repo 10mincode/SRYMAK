@@ -1,0 +1,200 @@
+/* Header Css  START --------------------------------------> */
+nav {
+  position: sticky;
+  font-weight: bolder;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.nav-item {
+  user-select: none;
+}
+
+
+.collapse {
+  font-weight: 500;
+}
+
+.contact-btns {
+  display: flex;
+}
+
+.contact-btns button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: transparent;
+  border: 0.1rem solid whitesmoke;
+  border-radius: 50%;
+  color: whitesmoke;
+  width: 2rem;
+  height: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contact-btns button:hover {
+  background-color: white;
+  color: #0f1f36;
+}
+
+.contact-btns button:hover>.on-hover {
+  display: block;
+}
+.mainbody{
+  padding-top: 4rem;
+}
+/* .btn-call:hover::after{
+  content:'+917217276506';
+  position:absolute;
+  top:125%;
+  right:-50%;
+  transform:translateX(50%);
+  padding: 0.4rem;
+  background-color:white;
+  border: 0.1rem solid black;
+  border-radius: 5px;
+} */
+.on-hover {
+  display: none;
+  position: absolute;
+  color: black;
+  top: 135%;
+  left: 0%;
+  transform: translateX(-90%);
+  padding: 0.4rem;
+  background-color: white;
+  border: 0.1rem solid black;
+  border-radius: 5px;
+}
+
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link.btn-login {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: transparent;
+  border: 0.1rem solid whitesmoke;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  color: whitesmoke;
+}
+
+.nav-link.btn-login:hover {
+  color: #0f1f36 !important;
+  background-color: whitesmoke;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.contact-btns.mobile {
+  display: none;
+}
+
+.contact-btns.desktop {
+  display: flex;
+}
+
+@media only screen and (max-width: 991px) {
+  .contact-btns.desktop {
+    display: none;
+  }
+
+  .contact-btns.mobile {
+    display: flex;
+  }
+
+  .btn-login {
+    width: 100%;
+    margin: 0 !important;
+    margin-top: 0.75rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .modalm-content {
+    width: 66.66%;
+  }
+
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand p {
+  margin: 0;
+  margin-left: 0.25rem;
+}
+
+@media only screen and (max-width: 425px) {
+  .navbar-toggler {
+    padding: 0;
+    margin: 0.25rem;
+    border: none;
+  }
+
+  .modalm-content {
+    width: 90%;
+  }
+
+  .leftside img {
+    width: 100% !important;
+    max-height: 100vh;
+  }
+
+  .navbar-toggler {
+    font-size: medium;
+  }
+
+  .rightside {
+    margin-top: 3rem;
+  }
+
+
+}
+
+@media only screen and (max-width: 320px) {
+  .navbar-toggler {
+    font-size: small;
+  }
+
+  .navbar-brand {
+    font-size: medium;
+    margin: 0;
+  }
+
+  .navbar-brand img {
+    height: 20px;
+  }
+
+  .contact-btns button {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 75%;
+  }
+
+  .rightside {
+    margin-top: 3rem;
+  }
+}
+/* Header CSS END xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */

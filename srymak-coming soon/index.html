@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRYMAK Coming Soon!!</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="SRYMAK - Competitive prep for Class 6-10, RMS & Sainik School aspirants. Small cohorts. Real face-to-face learning.">
+    <meta property="og:title" content="SRYMAK - Competitive Prep Platform">
+    <meta property="og:description" content="Small Cohorts. Real Results.">
+    <meta property="og:image" content="https://srymak-coming-soon.netlify.app/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f1f36;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 0.7s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #0f1f36;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        .logo span {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-btn {
+            padding: 8px 18px;
+            background: transparent;
+            border: 1px solid #ffa500;
+            color: #ffa500;
+            border-radius: 20px;
+            cursor: not-allowed;
+        }
+
+        /* HERO */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #ffa500;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #cfd8dc;
+        }
+
+        .features {
+            margin-top: 20px;
+            color: #ffa500;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* FORM */
+        .waitlist {
+            margin-top: 30px;
+        }
+
+        .waitlist input {
+            padding: 12px 16px;
+            border-radius: 25px;
+            border: none;
+            width: 260px;
+            outline: none;
+        }
+
+        .waitlist button {
+            padding: 12px 22px;
+            border-radius: 25px;
+            border: none;
+            margin-left: 10px;
+            background: #ffa500;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .waitlist button:hover {
+            background: white;
+            color: #0f1f36;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #9fb3c8;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .waitlist input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .waitlist button {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        .srymak {
+            position: relative;
+            background: #ffa500;
+            color: #0f1f36;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .srymak.link {
+            position: relative;
+            background: #0f1f36;
+            color: #ffa500;
+            border: 2px solid #ffa500;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+
+        }
+
+        .srymak:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease, font-size 0.3s ease;
+        }
+
+        .support {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: #9fb3c8;
+        }
+
+        .support a {
+            color: #ffa500;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .support a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="SRYMAK Logo">
+            <span>SRYMAK <span style="color: #ffa500;">Coming Soon!!</span></span>
+        </div>
+        <button class="nav-btn srymak link" onclick="toggle(this)">SRYMAK MAIN</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Competitive Prep.<br>
+                <span>Small Cohorts.</span><br>
+                Real Results.
+            </h1>
+
+            <p>
+                Face-to-face interactive learning for Class 6–10, RMS & Sainik School aspirants.
+            </p>
+
+            <div class="features">
+                5–10 Students • 6 Days/Week • Weekly Tests • Teach-Back System
+            </div>
+
+            <div class="waitlist">
+                <form name="waitlist" method="POST" action="thank-you.html" data-netlify="true" netlify>
+                    <input type="hidden" name="form-name" value="waitlist">
+                    <input type="email" name="email" placeholder="Enter your email" id="emailInput" required>
+                    <button type="submit">Join Early Access</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 SRYMAK Edu Services — Built for Serious Learners.
+        <div class="support">
+            Need help?
+            <a href="mailto:support@srymak.com">support@srymak.com</a>
+            •
+            <a href="tel:+917217276506">+917217276506</a>
+        </div>
+    </footer>
+    <script>
+        let timeoutRef = null;
+        function toggle(btn) {
+            if (!btn.classList.contains('link')) {
+                return;
+            }
+            btn.classList.toggle('link');
+            btn.innerText = btn.classList.contains('link') ? 'SRYMAK MAIN' : 'Coming Soon!!';
+            if (timeoutRef) clearTimeout(timeoutRef);
+
+            timeoutRef = setTimeout(() => {
+                btn.classList.toggle('link');
+                btn.innerText = btn.classList.contains('link') ? 'SRYMAK MAIN' : 'Coming Soon!!';
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

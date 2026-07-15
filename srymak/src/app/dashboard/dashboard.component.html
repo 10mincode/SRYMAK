@@ -1,0 +1,471 @@
+    <!-- <div style="font-family: 'Lobster', cursive; letter-spacing:0.09rem">
+      <h1 style="font-weight: 700;margin-bottom:0;">Hello,</h1>
+      <h3 style="font-weight: 700;">{{details.name}}</h3>
+    </div>
+    <div class="row ">
+      <div>
+        <h2 style="font-weight: 700;" class="mt-5 mb-3" align="center">Schedule of a Week</h2>
+      </div>
+      <div class="col-md-5">
+        <h3 align="center" class="my-2">Main Subjects</h3>
+        <table class="table table-dark m-auto" *ngIf="['00','10','20'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>3 Classes</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>3 Classes</td>
+            </tr>
+            <tr>
+              <td>Social Science</td>
+              <td>4 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['01','11','21'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>3 Classes</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>3 Classes</td>
+            </tr>
+            <tr>
+              <td>Social Science</td>
+              <td>3 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['02','12','23'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathematics</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>4 Classes</td>
+            </tr>
+            <tr>
+              <td>Social Science</td>
+              <td>4 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['03','13','23'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>4 Classes</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>4 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['04','14','24'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathematics</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>5 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['RMS6'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>4 Classes</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>GK</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>Reasoning</td>
+              <td>3 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['ENG'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English Grammar<br>English Speaking </td>
+              <td>5 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['30','40'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>3 Classes</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>4 Classes</td>
+            </tr>
+            <tr>
+              <td>Biology</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Physics</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Social Science</td>
+              <td>4 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['31','41'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>4 Classes</td>
+            </tr>
+            <tr>
+              <td>Mathematics</td>
+              <td>4 Classes</td>
+            </tr>
+            <tr>
+              <td>Biology</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Physics</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>2 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['32','42'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathematics</td>
+              <td>4 Classes</td>
+            </tr>
+            <tr>
+              <td>Biology</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Physics</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Social Science</td>
+              <td>4 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-dark m-auto" *ngIf="['33','43'].indexOf(details.course)!=-1">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathematics</td>
+              <td>5 Classes</td>
+            </tr>
+            <tr>
+              <td>Biology</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Physics</td>
+              <td>2 Classes</td>
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>2 Classes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-2 my-md-auto my-3 m-auto col-sm-12 "  *ngIf="['Class 6','Class 7','Class 8'].indexOf(details.course)!=-1" style="text-align:center">
+        <img src="../../assets/plussign.png">
+      </div>
+      <div class="col-md-5 m-auto" *ngIf="['Class 6','Class 7','Class 8'].indexOf(details.course)!=-1" >
+        <h3 align="center" class="my-2">Additional Subjects</h3>
+        <table class="table table-dark m-auto">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reasoning</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>General knowledge</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>English Debate</td>
+              <td>1 Class</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-5 m-auto" *ngIf="['00','10','20'].indexOf(details.course)!=-1" >
+        <h3 align="center" class="my-2">Additional Subjects</h3>
+        <table class="table table-dark m-auto">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reasoning</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>General knowledge</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>English Debate</td>
+              <td>1 Class</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-5 m-auto" *ngIf="['Class 6','Class 7','Class 8'].indexOf(details.course)!=-1" >
+        <h3 align="center" class="my-2">Additional Subjects</h3>
+        <table class="table table-dark m-auto">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reasoning</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>General knowledge</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>English Debate</td>
+              <td>1 Class</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-5 m-auto" *ngIf="['Class 6','Class 7','Class 8'].indexOf(details.course)!=-1" >
+        <h3 align="center" class="my-2">Additional Subjects</h3>
+        <table class="table table-dark m-auto">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reasoning</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>General knowledge</td>
+              <td>1 Class</td>
+            </tr>
+            <tr>
+              <td>English Debate</td>
+              <td>1 Class</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <h4 class="mt-4 col-md-6">There will be test on Every Saturday<br><br><br>
+      </h4>
+      <h4 class="mt-4 col-md-6">At the end of the classes, there will be 10 minutes for discussion:<br>
+        <ul>
+          <li>To let the mind get refreshed.</li>
+          <li>To strengthen their confidence.</li>
+          <li>To remove hesitation.</li>
+          <li>To increase the standard of conversation.</li>
+      </ul>
+      So that students would be admiring and be enthusiastic for the next day.
+        <br><br><br>
+      </h4>
+    <div class="col-md-6 col-sm-12">
+
+        <ul>
+          <li><h4>Test at every Weekend</h4></li>
+          <li><h4>Topicwise Worksheets</h4></li>
+          <li><h4>Proper Notes will be Provided</h4></li>
+          <li><h4>Classes till the final Exam (Annual Exam)</h4></li>
+          <li><h4>Can ask your Doubts Anytime (Even After the Class)</h4></li>
+        </ul>
+
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <ul>
+        <li>
+          <h4>Regular Update of your Child</h4>
+        </li>
+        <li>
+          <h4>PTM Every Month</h4>
+        </li>
+        <li>
+          <h4>Instant Doubt Clearing (Can ask your doubts as it strikes your mind)</h4>
+        </li>
+        <li>
+          <h4>Quizes on Every Topic</h4>
+        </li>
+        <li>
+          <h4>15 Students in a class from all over India</h4>
+        </li>
+      </ul>
+    </div>
+    <div style="color:chocolate">
+    <h4 style="max-width:100%;width:max-content;margin:auto" ><sup>**</sup>Dashboard Will be Activated After the Submission of fees<sup>**</sup></h4>
+    <h4 style="max-width:100%;width:max-content;margin:auto" ><sup>**</sup>Fees Can only be Submitted After Registration Ends<sup>**</sup></h4>
+    </div><h4 style="max-width:100%;width:max-content;margin:auto;color:red" class="py-4"><sup>**</sup>Registration Ends on 15 march 2022</h4>
+    <h4 style="max-width:100%;width:max-content;color:red" ><sup>**</sup>Note :- Leave will only be provided after receiving the application/Information from parents<br>
+    Otherwise Call Will be there</h4>
+    </div> -->
+<div>
+  <div class="main-cards flex-column">
+    <h2>!!Dashboard is Under Construction!!</h2><br>
+    <h3>Contact on <a href="tel:+917217276506">+91 7217276506</a> to Book Course</h3>
+    <!-- <div class="col-md-4 p-3">
+    <div class="card">
+      <img src="../../assets/blackimage.png" style="max-width:50px;max-height:50px;" alt="">
+      <div>
+        <h4>Hello</h4>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4 p-3">
+    <div class="card">
+      <img src="../../assets/blackimage.png" style="max-width:50px;max-height:50px;" alt="">
+      <div>
+        <p></p>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4 p-3">
+    <div class="card">
+      <img src="../../assets/blackimage.png" style="max-width:50px;max-height:50px;" alt="">
+      <div>
+        <h4>Hello</h4>
+      </div>
+    </div>
+    </div> -->
+  </div>
+
+</div>

@@ -1,0 +1,42 @@
+.box .heading {
+  background: #183153;
+  border-radius: 7px 7px 0px 0px;
+  padding: 7px 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  font-family: "Rubik";
+}
+
+.box {
+  box-shadow: 2px 2px 20px grey;
+  border-radius: 7px;
+}
+
+details {
+  background: #f6f6f6;
+  padding: 10px 20px;
+  border-radius: 7px;
+  margin-top: 20px;
+  font-family: "Rubik";
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+details p {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 1rem;
+  color: #198754;
+}
+
+details summary {
+  font-size: 1rem;
+  font-weight: bold;
+  outline: none;
+}
+.row{
+  --bs-gutter-x:0rem;
+}

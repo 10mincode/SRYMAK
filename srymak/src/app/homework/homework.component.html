@@ -1,0 +1,21 @@
+<div class="p-4 d-flex justify-content-between flex-column" style="height:100vh" >
+  <div class="p-2 bg-warning"><h2 class="text-center m-auto">HOMEWORK</h2></div>
+  <div class="justify-self-end">
+  <div style="overflow:auto">
+    <div style="overflow:auto; max-height:70vh  ">
+    <div *ngFor="let message of messages" class="message {{message.status}}">{{message.message}}</div>
+    </div>
+  <div style="max-height:3rem; padding:0.2rem; margin-bottom:1rem; display:flex"><input name="messagebox" id="messagebox" type="text" class="messagebox" style="width:-webkit-fill-available" placeholder="Enter Your Message...">
+      <button type="submit" (click)="openOrCloseModal('homeworkupload');" class="upload_button"><i class="fa-solid fa-upload"></i></button>
+    <button type="submit" (click)="send_message();" class="send_button"><i class="fa-solid fa-paper-plane"></i></button></div>
+      </div>
+</div>
+
+<div class="modalm" id="homeworkupload">
+  <div class="modalm-content " >
+    <a class="close-btn" (mouseup)="openOrCloseModal('homeworkupload')"> <i class="fas fa-times"></i> </a>
+    <div class="modalm-body ">
+      <input type="file" name="file_upload" id="upload_input" class="upload_file" (change)="OnChangeFile($event)">
+    </div>
+  </div>
+</div>

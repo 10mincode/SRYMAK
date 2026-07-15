@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500&display=swap');
+
+.optionbtn {
+  border-radius: 50%;
+  background-color: #3C4043;
+  color: white;
+  font-weight: bold;
+  border: none;
+  width: 45px;
+  height: 45px;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 135%;
+  position: relative;
+}
+
+.optionbtn:hover>div {
+  display: block;
+}
+
+.optionbtn div {
+  display: none;
+  width: max-content;
+  font-size: 0.8rem;
+  bottom: 110%;
+  position: absolute;
+  background-color: black;
+  padding: 0.4rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.optionsmenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.optionsmenu div {
+  flex: 1
+}
+
+.mainpage {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+::ng-deep video {
+  width: 400px;
+  transform:scaleX(-1);
+  height: 250px;
+  border-radius: 10px;
+  background-color: black;
+
+}

@@ -1,0 +1,258 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-md-4 px-xs-0" style="background-color: #0f1f36;
+">
+  <div class="container-fluid">
+    <div class="col-sm-5 col-md-3 align-items-center d-flex">
+      <button class="navbar-toggler mx-md-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand"><img src="../../assets/mainicon.png" style="height: 30px;" alt="">
+        <p>SRYMAK</p>
+      </a>
+    </div>
+    <div class="contact-btns mobile">
+      <a href="tel:+9105653553824"><button class="btn-call mx-2">
+          <i class="fas fa-phone"></i>
+          <div class="on-hover">
+            <h6>05653553824</h6>
+          </div>
+        </button></a>
+      <a href="mailto:support@srymak.com"> <button class="btn-email mx-2">
+          <i class="fas fa-envelope"></i>
+          <div class="on-hover">
+            <h6>support@srymak.com</h6>
+          </div>
+        </button></a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end mx-4" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': active_tab==0}" routerLink="/home" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': active_tab==1}" routerLink="/courses">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': active_tab==2}" fragment="contact" routerLink="/home">Contact US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': active_tab==3}" fragment="about" routerLink="/home">About US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': active_tab==4}" routerLink="/faqs">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-login px-4" style="font-weight: 900; color:black; background-color:#ffa500"
+            [ngClass]="{'active': active_tab==4}" href="https://stse.srymak.com">STSE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-login" (click)="openOrCloseModal('registermodal')" *ngIf="!loggedin"
+            style="font-weight: 900; color:bisque">Register / Login</a>
+          <a class="nav-link btn-login" routerLink="/dashboard" *ngIf="loggedin"
+            style="font-weight: 900; color:bisque">Go to Dashboard</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="contact-btns desktop">
+      <a href="tel:+917217276506"><button class="btn-call mx-2">
+          <i class="fas fa-phone"></i>
+          <div class="on-hover">
+            <h6>+917217276506</h6>
+          </div>
+        </button></a>
+      <a href="mailto:support@srymak.com"> <button class="btn-email mx-2">
+          <i class="fas fa-envelope"></i>
+          <div class="on-hover">
+            <h6>support@srymak.com</h6>
+          </div>
+        </button></a>
+    </div>
+
+  </div>
+</nav>
+<div class="modalm" id="registermodal">
+  <div class="modalm-content">
+    <a class="close-btn" (mouseup)="openOrCloseModal('registermodal')"> <i class="fas fa-times"></i> </a>
+    <div class="modalm-body">
+      <div *ngIf="showerror"
+        style="width: 100%; border-radius:10px; padding:1rem;margin-bottom:1rem;background:rgb(200, 200, 200); color:red;">
+        <h4 style="font-weight:700;">{{error}}</h4>
+      </div>
+      <h3 class="fs-3" *ngIf="!register">Login Now</h3>
+      <h3 class="fs-3" *ngIf="register">Book Your Free Trial Now</h3>
+      <h3 class="fs-6 text-danger" *ngIf="register">!! Only few Seats Left !!</h3>
+      <h6 class="detail-text" *ngIf="!isOtpSend">Enter your detials below</h6>
+      <!-- <h6 class="detail-text text-danger" *ngIf="!isOtpSend">Discount till 15 march 2022</h6> -->
+      <h6 class="detail-text" *ngIf="isOtpSend">Enter the OTP sent to your Email and Mobile below</h6>
+
+      <form id="" *ngIf="!isOtpSend && !register" [formGroup]="loginForm">
+        <div class="row mt-4">
+          <div class="inputBox col-xs-12">
+            <input type="email" id="myemail" formControlName="email" required>
+            <label for="myemail">Email<span class="required"></span></label>
+          </div>
+          <div class="inputBox col-xs-12">
+            <input toggle type="password" id="mypassw" formControlName="password" required>
+            <label for="myphone">Password<span class="required"></span></label>
+          </div>
+          <div class="col-md-12 mt-2">
+            <p class="text-center text-danger cursor-pointer" (click)="register=true;">Not a User? Register Now</p>
+            <button type="button" class="schedule-btn mt-0 fs-4 text-white" (click)="LOGIN_USER()">LOGIN</button>
+          </div>
+        </div>
+
+      </form>
+      <form id="" *ngIf="!isOtpSend && register" [formGroup]="registerForm">
+        <div class="row mt-4">
+          <div class="inputBox col-xs-12 col-md-6">
+            <input type="text" id="myfname" formControlName="fn" placeholder=" ">
+            <label for="myfname">First Name<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.fn.touched && registerForm.controls.fn.invalid"
+              class="text-danger">Required</small>
+
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <input type="text" id="mylname" formControlName="ln" placeholder=" ">
+            <label for="mylname">Last Name<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.ln.touched && registerForm.controls.ln.invalid"
+              class="text-danger">Required</small>
+
+
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <input type="number" min="5" max="100" id="myage" placeholder=" " (keypress)="onlyNumberKey($event)"
+              formControlName="age">
+            <label for="myage">Age<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.age.touched && registerForm.controls.age.invalid"
+              class="text-danger">Age should be between 5 to 100</small>
+
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <input type="date" id="mydob" placeholder=" " formControlName="dob">
+            <label for="mydob">DOB<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.dob.touched && registerForm.controls.dob.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class="inputBox col-xs-12">
+            <input type="email" id="myemail" placeholder=" " formControlName="email">
+            <label for="myemail">Email<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid"
+              class="text-danger">Enter a valid Email</small>
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <input type="password" id="mypass" placeholder=" " formControlName="password">
+            <label for="mypass">Password<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid"
+              class="text-danger">Should be minimum of 8 digits</small>
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <input type="password" id="cpass" placeholder=" " formControlName="cpass">
+            <label for="cpass">Confirm Password<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.cpass.touched && registerForm.controls.cpass.invalid"
+              class="text-danger">Should be minimum of 8 digits</small>
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <input type="phone" id="myphone" minlength="10" maxlength="10" (keypress)="onlyNumberKey($event)"
+              placeholder=" " formControlName="mobile">
+            <label for="myphone">Phone<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.mobile.touched && registerForm.controls.mobile.invalid"
+              class="text-danger">Enter a valid Mobile Number</small>
+          </div>
+          <!-- <div class="inputBox col-xs-12 col-md-6">
+            <input list="grades" type="list" id="mygrade" required>
+            <label for="myphone">Phone<span class="required">*</span></label>
+          </div> -->
+          <div class="inputBox col-xs-12 col-md-6">
+            <select name="" id="" formControlName="class" placeholder="Select grade...">
+              <option value="" selected disabled>--Select Grade--</option>
+              <option value="4">4<sup>th</sup></option>
+              <option value="5">5<sup>th</sup></option>
+              <option value="6">6<sup>th</sup></option>
+              <option value="7">7<sup>th</sup></option>
+              <option value="8">8<sup>th</sup></option>
+              <option value="9">9<sup>th</sup></option>
+              <option value="10">10<sup>th</sup></option>
+            </select>
+            <small align="left" *ngIf="registerForm.controls.class.touched && registerForm.controls.class.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class="inputBox col-xs-12 col-md-6"><select (change)="changeItems($event,class1.value)" #class1
+              formControlName="course">
+              <option value="" disabled selected>-Select Course-</option>
+              <option [value]="itemname.id" *ngFor="let itemname of ClassList1">{{itemname.Name}} </option>
+            </select>
+
+            <small align="left" *ngIf="registerForm.controls.course.touched && registerForm.controls.course.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <select id="subitem_select" formControlName="subcourse" placeholder="-Select Sub-Course-">
+              <option value="" disabled selected>-Select Sub-Course-</option>
+              <option *ngFor="let item of subItems1;" [value]="item">{{item}} </option>
+            </select>
+
+            <small align="left"
+              *ngIf="registerForm.controls.subcourse.touched && registerForm.controls.subcourse.invalid"
+              class="text-danger">Required</small>
+          </div>
+
+          <div class="inputBox col-xs-12 d-block">
+            <label class="w-100 mb-1" for="myphone">Address <span class="required">(OPTIONAL)</span></label>
+
+            <textarea class="w-100 p-1" formControlName="address" maxlength="200" style="min-height: 50px;"
+              type="address" id="myaddress"></textarea>
+
+            <div class="d-flex justify-content-between">
+              <p></p>
+              <small>{{registerForm.controls.address.value?.length || 0}}/200</small>
+            </div>
+
+
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <select name="states" (change)="getcitylist($any($event.target).value)" id="" formControlName="state">
+              <option selected value="" disabled>--Select State--</option>
+              <option *ngFor="let state of statelist" [value]="state">{{state}}</option>
+            </select>
+            <small align="left" *ngIf="registerForm.controls.state.touched && registerForm.controls.state.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class="inputBox col-xs-12 col-md-6">
+            <select name="" id="" formControlName="city">
+              <option selected value="" disabled>--Select City--</option>
+              <option [value]="city" *ngFor="let city of cities">{{city}}</option>
+            </select>
+            <small align="left" *ngIf="registerForm.controls.city.touched && registerForm.controls.city.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class=" col-md-12 mt-2">
+            <p class="text-center text-danger cursor-pointer" (click)="register=false;">Already a User? Login Now</p>
+            <button type="button" class="schedule-btn mt-0 fs-4 text-white" (click)="CHECK_USER()">SCHEDULE
+              CLASS</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- <form id="" class="">
+        <div class="row mt-4">
+          <div class="inputBox col-xs-12">
+            <input type="tel" id="myotpmobile" (keypress)="onlyNumberKey($event)" minlength="5" maxlength="5" required>
+            <label for="myname">Enter Mobile OTP<span class="required">*</span></label>
+          </div>
+
+          <div class="inputBox col-xs-12">
+            <input type="tel" id="myotpemail" (keypress)="onlyNumberKey($event)" minlength="5" maxlength="5" required>
+            <label for="myname">Enter Email OTP<span class="required">*</span></label>
+          </div>
+
+          <div class=" col-md-12">
+            <button type="button" class="schedule-btn fs-4 text-white" (click)="Check_OTP()">PROCEED</button>
+          </div>
+        </div>
+
+      </form> -->
+    </div>
+  </div>
+</div>

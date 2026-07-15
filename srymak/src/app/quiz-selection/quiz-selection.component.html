@@ -1,0 +1,8 @@
+<div>
+  <input type="text" id="search_box" class="search_box">
+
+  <div class="quiz-card" *ngFor="let question of questions" (click)="go_to_teachers_section(question.quizid)">
+    <h3>{{question.quizname}}</h3>
+    <button>START</button>
+  </div>
+</div>

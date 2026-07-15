@@ -1,0 +1,140 @@
+<app-header></app-header>
+<div class="row bg-danger">
+  <div class="col-md-6 text-center h-100">
+    <img src=".././../assets/sestmain.png" alt="" class="m-auto">
+    <img src=".././../assets/sestmain.png" alt="" class="m-auto">
+  </div>
+<div class="p-5 col-md-6 bg-dark">
+      <form id="registerForm" [formGroup]="registerForm" class="bg-white p-4">
+        <h3 class="text-center">REGISTER AND GET 50000</h3>
+        <div class="row mt-4">
+          <div class="inputBox col-xs-12 ">
+            <input type="text" id="myfname" formControlName="fn" placeholder=" ">
+            <label for="myfname">First Name<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.fn.touched && registerForm.controls.fn.invalid"
+              class="text-danger">Required</small>
+
+          </div>
+          <div class="inputBox col-xs-12 ">
+            <input type="text" id="mylname" formControlName="ln" placeholder=" ">
+            <label for="mylname">Last Name<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.ln.touched && registerForm.controls.ln.invalid" class="text-danger">Required</small>
+
+
+          </div>
+          <div class="inputBox col-xs-12 ">
+            <input type="number" min="5" max="100" id="myage" placeholder=" " (keypress)="onlyNumberKey($event)" formControlName="age">
+            <label for="myage">Age<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.age.touched && registerForm.controls.age.invalid"
+                          class="text-danger">Age should be between 5 to 100</small>
+
+          </div>
+          <div class="inputBox col-xs-12">
+            <input type="email" id="myemail" placeholder=" " formControlName="email">
+            <label for="myemail">Email<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid"
+              class="text-danger">Enter a valid Email</small>
+          </div>
+          <div class="inputBox col-xs-12 ">
+            <input type="password" id="mypass" placeholder=" " formControlName="password">
+            <label for="mypass">Password<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid"
+              class="text-danger">Should be minimum of 8 digits</small>
+          </div>
+          <div class="inputBox col-xs-12 ">
+            <input type="password" id="cpass" placeholder=" " formControlName="cpass">
+            <label for="cpass">Confirm Password<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.cpass.touched && registerForm.controls.cpass.invalid"
+              class="text-danger">Should be minimum of 8 digits</small>
+          </div>
+          <div class="inputBox col-xs-12 " >
+            <input type="phone" id="myphone" minlength="10" maxlength="10"
+              (keypress)="onlyNumberKey($event)" placeholder=" " formControlName="mobile">
+            <label for="myphone">Phone<span class="required">*</span></label>
+            <small align="left" *ngIf="registerForm.controls.mobile.touched && registerForm.controls.mobile.invalid"
+              class="text-danger">Enter a valid Mobile Number</small>
+          </div>
+          <!-- <div class="inputBox col-xs-12 ">
+            <input list="grades" type="list" id="mygrade" required>
+            <label for="myphone">Phone<span class="required">*</span></label>
+          </div> -->
+          <div class="inputBox col-xs-12 ">
+            <select name="" id="" formControlName="class" placeholder="Select grade...">
+              <option value="" selected disabled>--Select Grade--</option>
+              <option value="4">4<sup>th</sup></option>
+              <option value="5">5<sup>th</sup></option>
+              <option value="6">6<sup>th</sup></option>
+              <option value="7">7<sup>th</sup></option>
+              <option value="8">8<sup>th</sup></option>
+              <option value="9">9<sup>th</sup></option>
+              <option value="10">10<sup>th</sup></option>
+            </select>
+            <small align="left" *ngIf="registerForm.controls.class.touched && registerForm.controls.class.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class="inputBox col-xs-12 d-block">
+                        <label class="w-100 mb-1" for="myphone">Address <span class="required">(OPTIONAL)</span></label>
+
+            <textarea class="w-100 p-1" formControlName="address" maxlength="200" style="min-height: 50px;" type="address" id="myaddress" ></textarea>
+
+            <div class="d-flex justify-content-between">
+              <p></p>
+              <small>{{registerForm.controls.address.value?.length || 0}}/200</small>
+            </div>
+
+
+          </div>
+          <div class="inputBox col-xs-12 ">
+            <select name="states" (change)="getcitylist($any($event.target).value)" id="" formControlName="state">
+              <option selected value="" disabled>--Select State--</option>
+              <option *ngFor="let state of statelist" [value]="state">{{state}}</option>
+            </select>
+            <small align="left" *ngIf="registerForm.controls.state.touched && registerForm.controls.state.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class="inputBox col-xs-12 ">
+            <select name="" id="" formControlName="city">
+              <option selected value="" disabled>--Select City--</option>
+              <option [value]="city" *ngFor="let city of cities">{{city}}</option>
+            </select>
+            <small align="left" *ngIf="registerForm.controls.city.touched && registerForm.controls.city.invalid"
+              class="text-danger">Required</small>
+          </div>
+          <div class=" col-md-12 mt-2">
+            <button type="button" class="schedule-btn mt-0 fs-4 text-white" (click)="enroll_()">ENROLL FOR TEST</button>
+          </div>
+        </div>
+        </form>
+        </div>
+</div>
+<div class="d-flex  p-5">
+<div style="width:-webkit-fill-available" class="">
+  <h1 class="text-center">ELIGIBILITY</h1>
+  <div class="text-center">
+    <p>FOR CLASS 6 TEST - CLASS 6 TEST ELIGIBILITY CRIETRIA</p>
+    <p>FOR CLASS 7 TEST - CLASS 7 TEST ELIGIBILITY CRIETRIA</p>
+    <p>FOR CLASS 8 TEST - CLASS 8 TEST ELIGIBILITY CRIETRIA</p>
+    <p>FOR CLASS 9 TEST - CLASS 9 TEST ELIGIBILITY CRIETRIA</p>
+  </div>
+</div>
+<div class="d-sm-none d-md-block">
+  <img src="../../assets/class10poster.JPG" alt="">
+</div>
+</div>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+<div class="d-flex  p-5">
+<div>
+  <img src="../../assets/class10poster.JPG" alt="">
+</div>
+<div style="width:-webkit-fill-available">
+  <h1 class="text-center">ELIGIBILITY</h1>
+  <div class="text-center">
+    <p>FOR CLASS 6 TEST - CLASS 6 TEST ELIGIBILITY CRIETRIA</p>
+    <p>FOR CLASS 6 TEST - CLASS 6 TEST ELIGIBILITY CRIETRIA</p>
+    <p>FOR CLASS 7 TEST - CLASS 7 TEST ELIGIBILITY CRIETRIA</p>
+    <p>FOR CLASS 8 TEST - CLASS 8 TEST ELIGIBILITY CRIETRIA</p>
+    <p>FOR CLASS 9 TEST - CLASS 9 TEST ELIGIBILITY CRIETRIA</p>
+  </div>
+</div>
+</div>

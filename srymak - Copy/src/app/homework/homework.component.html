@@ -1,0 +1,46 @@
+<h2>Homework</h2>
+<div class="row">
+  <div class="homework-card col-md-6 col-sm-11 p-md-3 ">
+    <div class="border p-3 pt-4" style="border-radius: 0.5rem;">
+      <div class="flex justify-content-between">
+        <h3 class="w-auto">Class: 11</h3>
+        <button class="btn bg-primary text-white fw-bold" (click)="openOrCloseModal('homeworkupload')">SEND PIC</button>
+      </div>
+      <hr>
+      <div class="what-to-do">
+        <div class="flex justify-content-between">
+          <p class="fw-bold w-100">What to do:-</p>
+        <span class="badge bg-warning text-dark" style="height:fit-content">Pending</span>
+        </div>
+        <img src="https://www.k5learning.com/worksheets/math/grade-2-multiplication-table-2-5-10.gif" class="w-100">
+      </div>
+    </div>
+  </div>
+  <div class="homework-card col-md-6 col-sm-11 p-md-3 ">
+    <div class="border p-3 pt-4" style="border-radius: 0.5rem;">
+      <div class="flex justify-content-between">
+        <h3 class="w-auto">Class: 10</h3>
+        <button class="btn bg-primary text-white fw-bold" (click)="openOrCloseModal('homeworkupload')">SEND PIC</button>
+      </div>
+      <hr>
+      <div class="what-to-do">
+        <div class="flex justify-content-between">
+          <p class="fw-bold w-100">What to do:-</p>
+        <span class="badge bg-danger text-dark" style="height:fit-content">Due</span>
+        </div>
+
+        <img src="https://www.k5learning.com/sites/all/files/worksheets/math/grade-6-math-worksheet.gif" class="w-100">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modalm" id="homeworkupload">
+  <div class="modalm-content " >
+    <a class="close-btn" (mouseup)="openOrCloseModal('homeworkupload')"> <i class="fas fa-times"></i> </a>
+    <div class="modalm-body ">
+      <h3 class="mb-3">Class: 10</h3>
+      <input type="file" name="file_upload" id="upload_input" class="upload_file" (change)="OnChangeFile($event)">
+      <button class="btn bg-warning">Upload</button>
+    </div>
+  </div>
+</div>

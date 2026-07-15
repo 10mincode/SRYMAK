@@ -1,0 +1,123 @@
+<form id="" [formGroup]="registerForm">
+  <div class="row mt-4">
+    <div class="inputBox col-xs-12">
+      <input type="text" id="myfname" formControlName="fn" placeholder=" ">
+      <label for="myfname">First Name<span class="required">*</span></label>
+      <small align="left" *ngIf="registerForm.controls.fn.touched && registerForm.controls.fn.invalid"
+        class="text-danger">Required</small>
+
+    </div>
+    <div class="inputBox col-xs-12 col-md-6">
+      <input type="number" min="5" max="100" id="myage" placeholder=" " (keypress)="onlyNumberKey($event)"
+        formControlName="age">
+      <label for="myage">Age<span class="required">*</span></label>
+      <small align="left" *ngIf="registerForm.controls.age.touched && registerForm.controls.age.invalid"
+        class="text-danger">Age should be between 5 to 100</small>
+
+    </div>
+    <div class="inputBox col-xs-12 col-md-6">
+      <input type="date" id="mydob" placeholder=" " formControlName="dob">
+      <label for="mydob">DOB<span class="required">*</span></label>
+      <small align="left" *ngIf="registerForm.controls.dob.touched && registerForm.controls.dob.invalid"
+        class="text-danger">Required</small>
+    </div>
+    <div class="inputBox col-xs-12">
+      <input type="email" id="myemail" placeholder=" " formControlName="email" [readonly]="true">
+      <label for="myemail">Email<span class="required">*</span></label>
+      <small align="left" *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid"
+        class="text-danger">Enter a valid Email</small>
+    </div>
+    <div class="inputBox col-xs-12 col-md-6">
+      <input type="phone" id="myphone" minlength="10" maxlength="10"  [readonly]="true" (keypress)="onlyNumberKey($event)" placeholder=" "
+        formControlName="mobile">
+      <label for="myphone">Phone<span class="required">*</span></label>
+      <small align="left" *ngIf="registerForm.controls.mobile.touched && registerForm.controls.mobile.invalid"
+        class="text-danger">Enter a valid Mobile Number</small>
+    </div>
+    <!-- <div class="inputBox col-xs-12 col-md-6">
+            <input list="grades" type="list" id="mygrade" required>
+            <label for="myphone">Phone<span class="required">*</span></label>
+          </div> -->
+    <div class="inputBox col-xs-12 col-md-6">
+      <select name="" id="" formControlName="class" placeholder="Select grade...">
+        <option value="" selected disabled>--Select Grade--</option>
+        <option value="4">4<sup>th</sup></option>
+        <option value="5">5<sup>th</sup></option>
+        <option value="6">6<sup>th</sup></option>
+        <option value="7">7<sup>th</sup></option>
+        <option value="8">8<sup>th</sup></option>
+        <option value="9">9<sup>th</sup></option>
+        <option value="10">10<sup>th</sup></option>
+      </select>
+      <small align="left" *ngIf="registerForm.controls.class.touched && registerForm.controls.class.invalid"
+        class="text-danger">Required</small>
+    </div>
+    <div class="inputBox col-xs-12">
+      <select name="" id="" formControlName="course">
+      <option selected value="" disabled>--Select Course--</option>
+      <option value="00">Class 6 Main + Additional Subjects</option>
+      <option value="01">Class 6 main Subjects</option>
+      <option value="03">Class 6 Math, Eng, Science</option>
+      <option value="02">Class 6 Math, Science, Social Science</option>
+      <option value="04">Class 6 Math, Science</option>
+      <option value="10">Class 7 Main + Additional Subjects</option>
+      <option value="11">Class 7 main Subjects</option>
+      <option value="13">Class 7 Math, Eng, Science</option>
+      <option value="12">Class 7 Math, Science, Social Science</option>
+      <option value="14">Class 7 Math, Science</option>
+      <option value="20">Class 8 Main + Additional Subjects</option>
+      <option value="21">Class 8 main Subjects</option>
+      <option value="23">Class 8 Math, Eng, Science</option>
+      <option value="22">Class 8 Math, Science, Social Science</option>
+      <option value="24">Class 8 Math, Science</option>
+      <option value="30">Class 9 Main Subjects </option>
+      <option value="31">Class 9 Math, Eng, Science</option>
+            <option value="32">Class 9 Math, Science, Social Science</option>
+
+      <option value="33">Class 9 Math, Science</option>
+
+      <option value="40">Class 10 Main Subjects</option>
+      <option value="41">Class 10 Math, Eng, Science</option>
+      <option value="42">Class 10 Math, Social Science, Science</option>
+      <option value="43">Class 10 Math, Science</option>
+      <option value="ENG">English Grammer and speaking</option>
+      <option value="RMS6">RMS & Sainik School Class 6</option>
+    </select>
+      <small align="left" *ngIf="registerForm.controls.course.touched && registerForm.controls.course.invalid"
+        class="text-danger">Required</small>
+    </div>
+    <div class="inputBox col-xs-12 d-block">
+      <label class="w-100 mb-1" for="myphone">Address <span class="required">(OPTIONAL)</span></label>
+
+      <textarea class="w-100 p-1" formControlName="address" maxlength="200" style="min-height: 50px;" type="address"
+        id="myaddress"></textarea>
+
+      <div class="d-flex justify-content-between">
+        <p></p>
+        <small>{{registerForm.controls.address.value?.length || 0}}/200</small>
+      </div>
+
+
+    </div>
+    <div class="inputBox col-xs-12 col-md-6">
+      <select name="states" (change)="getcitylist($any($event.target).value)" id="" formControlName="state">
+        <option selected value="" disabled>--Select State--</option>
+        <option *ngFor="let state of statelist" [value]="state">{{state}}</option>
+      </select>
+      <small align="left" *ngIf="registerForm.controls.state.touched && registerForm.controls.state.invalid"
+        class="text-danger">Required</small>
+    </div>
+    <div class="inputBox col-xs-12 col-md-6">
+      <select name="" id="" formControlName="city">
+        <option selected value="" disabled>--Select City--</option>
+        <option [value]="city" *ngFor="let city of cities">{{city}}</option>
+      </select>
+      <small align="left" *ngIf="registerForm.controls.city.touched && registerForm.controls.city.invalid"
+        class="text-danger">Required</small>
+    </div>
+    <div class=" col-md-12 mt-2">
+      <button type="button" class="schedule-btn mt-0 fs-4 text-white" (click)="UPDATE_USER()">UPDATE</button>
+    </div>
+  </div>
+
+</form>

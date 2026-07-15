@@ -1,0 +1,349 @@
+<app-header style="z-index: 5556;position:relative;" [active_tab]="1"></app-header>
+
+
+<div class="main_div p-md-5 p-sm-3 p-3" *ngIf="course">
+  <div>
+    <h1 class="fw-bold">{{course.name}}</h1>
+    <p class="px-2 py-1 till-date fs-6"><i class="fa-regular fa-calendar-days"></i> Access till exam date</p>
+    <h6 class="fw-bold fs-6 mt-2">Subjects covered : {{course.no_sub}}</h6>
+    <div class="d-flex row">
+      <p class=" px-2 py-1 mx-2 till-date col-xs-12" *ngFor="let subject of course.subjects"
+        [innerHtml]="jusssss+' '+subject"></p>
+    </div>
+    <h6 class="fw-bold fs-6 mt-2">Teaching Language</h6>
+    <div class="d-flex row">
+      <p class=" px-2 py-1 mx-2 till-date col-xs-12">Hinglish</p>
+    </div>
+    <h5 class="d-md-none d-block">Fees : <s style="font-size:smaller">₹{{course.fees}}</s>&nbsp;₹{{course.fees2}} </h5>
+    <p class="d-md-none d-block">for more details:- click on the check course section below </p>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-8 col-lg-8 p-2 ">
+      <div class="course_detail_div p-3">
+      <h2 class="fw-bold">Schedule & Syllabus</h2>
+      <h5 class="fw-bold fs-5 mt-2">Time Table : {{class_time}} min/Class</h5>
+      <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Class 1</th>
+            <th scope="col">Class 2</th>
+            <th scope="col">Class 3</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="course.timetable">
+          <tr >
+            <th>Mon</th>
+            <td *ngFor="let period of course.timetable.mon" >{{ period }}</td>
+          </tr>
+          <tr >
+            <th>Tue</th>
+            <td *ngFor="let period of course.timetable.tue" >{{ period }}</td>
+          </tr>
+          <tr >
+            <th>Wed</th>
+            <td *ngFor="let period of course.timetable.wed" >{{ period }}</td>
+          </tr>
+          <tr >
+            <th>Thu</th>
+            <td *ngFor="let period of course.timetable.thu" >{{ period }}</td>
+          </tr>
+          <tr >
+            <th>Fri</th>
+            <td *ngFor="let period of course.timetable.fri" >{{ period }}</td>
+          </tr>
+          <tr >
+            <th>Sat</th>
+            <td *ngFor="let period of course.timetable.sat" >{{ period }}</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!course.timetable">
+          <tr>
+            <th>Mon</th>
+            <td class="p-2"><div class="no-schedule p-2">Yet to be scheduled</div> </td>
+          </tr>
+          <tr>
+            <th>Tue</th>
+            <td class="p-2"><div class="no-schedule p-2">Yet to be scheduled</div> </td>
+          </tr>
+          <tr>
+            <th>Wed</th>
+            <td class="p-2"><div class="no-schedule p-2">Yet to be scheduled</div> </td>
+          </tr>
+          <tr>
+            <th>Thu</th>
+            <td class="p-2"><div class="no-schedule p-2">Yet to be scheduled</div> </td>
+          </tr>
+          <tr>
+            <th>Fri</th>
+            <td class="p-2"><div class="no-schedule p-2">Yet to be scheduled</div> </td>
+          </tr>
+          <tr>
+            <th>Sat</th>
+            <td class="p-2"><div class="no-schedule p-2">Yet to be scheduled</div> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="fw-bold py-4">Why this course?</h2>
+      <div class="row justify-content-center">
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/dailyclasses.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>6 days classes/week</h3>
+            </div>
+
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/test.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>Weekly Tests</h3>
+            </div>
+
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/worksheet.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>Topic-wise Worksheets</h3>
+            </div>
+
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/childupdate.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>Regular Child Update</h3>
+            </div>
+
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/monthlyptm.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>Monthly P.T.M</h3>
+            </div>
+
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/instantdoubt.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>Instant Doubt clearing</h3>
+            </div>
+
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/note.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>Notes will be provided</h3>
+            </div>
+
+
+            <div class="text-center  p-5 pt-0 detail-card col-md-6 col-sm-8 col-12">
+              <img src="../../assets/features/translation.png" style="max-width: 200px !important;
+            aspect-ratio: 1 / 1;margin:auto;">
+              <h3>Billingual Classes</h3>
+            </div>
+
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-4 p-2">
+      <app-course-card class="d-md-block d-none"  [loggedin]="loggedin"  style="position:sticky;top:70px" [course_details]="course" [course_class_time]="class_time"></app-course-card>
+      <app-course-card class="d-md-none course-card-mobile-top" [loggedin]="loggedin" *ngIf="show_course_mobile" [course_details]="course" [course_class_time]="class_time"></app-course-card>
+      <div class="d-md-none course-card-mobile d-flex justify-content-between align-items-center text-white px-3" (click)="show_course_mobile=!show_course_mobile">
+        <h5>Course Plan <i *ngIf="!show_course_mobile" class="fa-solid fa-angle-up"></i><i *ngIf="show_course_mobile" class="fa-solid fa-angle-down"></i></h5>
+        <div class="p-2">
+        <button class="schedule-btn text-white fs-5 m-0" style="background: #bf4500 !important;" (click)="openOrCloseModal('registermodal')">Book Trial</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 px-md-5 px-xs-3">
+    <div class="box col-12 p-0">
+      <p class="heading">FAQs</p>
+      <div class="faqs px-md-5 px-xs-3 py-3">
+        <details>
+          <summary>Why should we choose SRYMAK ?</summary>
+          <p class="text">Srymak, is a platform which provides students with face to face classes.<br>
+            You can interact with camera📷 and mic🎙️.<br>
+            Easy to understand explanation with fun<br>
+          </p>
+        </details>
+        <details>
+          <summary>When will the course start?</summary>
+          <p class="text">RMS & Sainik School - 20 march 2023<br>Class 6 to 10 - 3 April 2023<br></p>
+        </details>
+        <details>
+          <summary>How many students were there in a Group (batch)?</summary>
+          <p class="text">There were maximum 10-15 students in a batch from all over India</p>
+        </details>
+        <details>
+          <summary>How can we join these classes?</summary>
+          <p class="text">Step 1 -&gt; Register yourself on our website.<br> Step 2 -&gt; Then there will be a Free Trial Class.<br> Step 3 -&gt; And you are good to go😊.<br> Hurray! Now you have joined the classes</p>
+        </details>
+        <details>
+          <summary>How many classes will be taken every day?</summary>
+          <p class="text">There can be maximum 3 and minimum 1 classes per day</p>
+        </details>
+        <details>
+          <summary>How many subjects are there?</summary>
+          <p class="text">For RMS & Sainik School 6:<br>1. English<br>2. Mathematics<br>3. General Knowledge<br>4.
+            Resoning</p>
+          <p class="text">For RMS & Sainik School 9:<br>1. English<br>2. Mathematics<br>3. Science<br>4.
+            Resoning<br>5. Hindi<br>6. Social Science</p>
+          <p class="text">For class 6 to 8:<br>1. English<br>2. Mathematics<br>3. Social Science<br>4. Science</p>
+          <p class="text">For class 9 and 10:<br>1. English<br>2. Mathematics<br>3. Social Science<br>4. Science</p>
+        </details>
+        <details>
+          <summary>Is it only for CBSE?</summary>
+          <p class="text">Yes, It is only for the students of CBSE<br>And For the students who are preparing for RMS & Sainik
+            School</p>
+        </details>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<div class="footer" *ngIf="course">
+<div class="d-flex row justify-content-between text-white">
+  <div class="col-md-6 col-12"><a class="text-white" target="_blank"
+      href="https://www.srymak.com/privacypolicy">Privacy Policy</a> | <a class="text-white" target="_blank"
+      href="https://www.srymak.com/tcapply">Terms and conditions</a></div>
+      <hr class="d-md-none my-2">
+  <div class="col-md-6 col-12 text-md-end">SRYMAK Edu Services&reg;Pvt. Ltd.</div>
+</div>
+</div>
+<!-- Model of Selecting Course -->
+<div class="modalm" id="selcourse">
+  <div class="modalm-content" style="max-width: 30rem;">
+    <!-- <a class="close-btn" (mouseup)="openOrCloseModal('selcourse')"> <i class="fas fa-times"></i> </a> -->
+
+    <div class="modalm-body p-4  d-flex row" style="text-align:left;" [formGroup]="course_select">
+      <div class="main_select d-flex flex-column w-fit">
+        <div class="select_div">
+          <label class="select_label fs-4 fw-bolder">Course</label>
+          <div class="select_main">
+            <select #class (change)="changeItems($event,class.value)" id="select_course" formControlName="course">
+              <option value="" disabled [selected]="true">-Select Course-</option>
+              <option [value]="itemname.id" *ngFor="let itemname of ClassList;index as i">{{itemname.Name}} </option>
+            </select>
+          </div>
+        </div>
+        <div class="select_div">
+          <label class="select_label fs-4 fw-bolder">Sub Course</label>
+          <div class="select_main">
+            <select id="subitem_select" formControlName="subcourse">
+              <option value="" disabled [selected]="true">-Select Sub-Course-</option>
+              <option *ngFor="let item of subItems;index as i" [value]="i">{{item}} </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class=" col-md-12">
+          <button type="submit" (click)="CheckCourse()"  class="schedule-btn fs-4 text-white">Check Course</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Enf of Model of Selecting Course -->
+
+<div class="modalm" id="content">
+  <div class="modalm-content">
+    <a class="close-btn" (mouseup)="openOrCloseModal('content')"> <i class="fas fa-times"></i> </a>
+    <div class="modalm-header">
+      <h2>Course Detials</h2>
+    </div>
+    <div class="modalm-body p-4" style="text-align:left;" >
+      <h4>{{activecourse.name}}</h4>
+      <h5 class="px-sm-4" *ngIf="activecourse.subjects">Subjects : {{activecourse.subjects.length}}</h5>
+      <div class="px-sm-5" *ngFor="let subject of activecourse.subjects">
+        <li *ngIf="!activecourse.select_sub">{{subject}}</li>
+        <input type="checkbox" name="subject" value="{{subject}}" id="{{subject}}_sub"
+          *ngIf="activecourse.select_sub"><label class="ps-3" *ngIf="activecourse.select_sub"
+          for="{{subject}}_sub">{{subject}}</label>
+      </div>
+      <div *ngIf="activecourse.add_subs">
+        <h5 class="px-sm-4">Addtional Subjects (Free) : {{activecourse.add_subs.length}}</h5>
+        <div class="px-sm-5" *ngFor="let subject of activecourse.add_subs">
+          <li *ngIf="!activecourse.select_sub">{{subject}}</li>
+        </div>
+      </div>
+      <h5 class="px-sm-4">Fees ( Full Course ):</h5>
+      <ul class="px-sm-5">
+        <li>Per Month : ₹{{activecourse.fees}}</li>
+        <li>Per 6 Month : ₹{{activecourse.fees3}}</li>
+        <li>Full Course : ₹{{activecourse.fees2}}</li>
+        <!-- <li>Subjects : {{activecourse.no_subjects}}</li>
+        <li *ngIf="activecourse.add_subs">Additional Subjects : {{activecourse.add_subs.length}}</li> -->
+      </ul>
+      <p class="text-danger">*Note - {{activecourse.note}}</p>
+      <div class=" col-md-12">
+        <button type="submit" class="schedule-btn fs-4 text-white"
+          (click)="openOrCloseModal('content');openOrCloseModal('registermodal')">BOOK NOW</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row justify-content-center" style="width: 100%;margin-right: 0px;margin-left: 0px;">
+  <h1 class="col-12 p-4 px-5">Our Courses <i class="fas fa-arrow-down"></i></h1>
+  <div class="w-100"></div>
+    <h3 class="p-3 ms-md-5 w-auto">Rms and Sainik School Class 6</h3>
+    <div class="w-100"></div>
+    <app-course-card *ngFor="let course of [courses[5]]" class="col course-card" (cd)="getcd($event)"
+      [course_details]="course"></app-course-card>
+
+    <app-course-card *ngFor="let course of [courses[6]]" class="col course-card" (cd)="getcd($event)"
+      [course_details]="course"></app-course-card>
+<div class="w-100"></div>
+  <h3 class="p-3 ms-md-5 w-auto">CLASS 6</h3>
+  <div class="w-100"></div>
+  <app-course-card *ngFor="let course of courses[0].Class_6" class="col course-card" (cd)="getcd($event)" [course_details]="course" ></app-course-card>
+  <div class="w-100"></div>
+  <h3 class="p-3 ms-md-5 w-auto">CLASS 7</h3>
+  <div class="w-100"></div>
+  <app-course-card *ngFor="let course of courses[1].Class_7" class="col course-card" (cd)="getcd($event)" [course_details]="course" ></app-course-card>
+  <div class="w-100"></div>
+  <h3 class="p-3 ms-md-5 w-auto">CLASS 8</h3>
+  <div class="w-100"></div>
+  <app-course-card *ngFor="let course of courses[2].Class_8" class="col course-card" (cd)="getcd($event)" [course_details]="course" ></app-course-card>
+  <div class="w-100"></div>
+  <h3 class="p-3 ms-md-5 w-auto">CLASS 9</h3>
+  <div class="w-100"></div>
+  <app-course-card *ngFor="let course of courses[3].Class_9" class="col course-card" (cd)="getcd($event)" [course_details]="course" ></app-course-card>
+  <div class="w-100"></div>
+  <h3 class="p-3 ms-md-5 w-auto">CLASS 10</h3>
+  <div class="w-100"></div>
+  <app-course-card *ngFor="let course of courses[4].Class_10" class="col course-card" (cd)="getcd($event)" [course_details]="course" ></app-course-card>
+</div> -->
+
+<!-- <div class="row">
+  <div class="columns col">
+    <ul class="price">
+      <li class="header">Basic</li>
+      <li class="grey">$ 9.99 / year</li>
+      <li>10GB Storage</li>
+      <li>10 Emails</li>
+      <li>10 Domains</li>
+      <li>1GB Bandwidth</li>
+      <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+  </div>
+
+  <div class="columns col">
+    <ul class="price">
+      <li class="header" style="background-color:#04AA6D">Pro</li>
+      <li class="grey">$ 24.99 / year</li>
+      <li>25GB Storage</li>
+      <li>25 Emails</li>
+      <li>25 Domains</li>
+      <li>2GB Bandwidth</li>
+      <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+  </div>
+</div> -->

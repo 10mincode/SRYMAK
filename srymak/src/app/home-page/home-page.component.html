@@ -1,0 +1,193 @@
+<div>
+  <app-header [active_tab]="0"></app-header>
+  <div class="body">
+    <div class="top-section row">
+      <div class="leftside col-md-6 col-xs-12"><img src="../../assets/main4.png"></div>
+      <div class="rightside col-md-6 col-xs-12">
+        <h1>Welcome to Srymak Classes</h1>
+          <p>A journey to success</p>
+        <button class="btn enroll-btn mb-3" routerLink="/courses">Explore Courses</button><br>
+        <button class="btn enroll-btn" (click)="openOrCloseModal('registermodal')">Book a Free TRIAL CLASS </button>
+      </div>
+    </div>
+    <h2 align="center" class="mt-4">Our Features</h2>
+
+    <owl-carousel-o [options]="customOptions">
+
+        <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/dailyclasses.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>6 days classes/week<br>2 hours 10 min/day</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/test.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Weekly Tests</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/worksheet.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Topicwise Worksheets</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/childupdate.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Regular Child Update</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/monthlyptm.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Monthly P.T.M</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/instantdoubt.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Instant Doubt Clearing</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/note.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Notes will be provided</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/translation.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Bilingual Classes</h3>
+      </div>
+      </ng-template>
+      <!-- <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/shortvideos.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Short Videos on every topic</h3>
+      </div>
+      </ng-template> -->
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/quiz.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Daily Quizes of every Topic</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/facetoface.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>Face to Face Classes</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/allindia.png" style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>All India Competition</h3>
+      </div>
+      </ng-template>
+      <ng-template carouselSlide>
+      <div class="text-center  p-5 pt-0 detail-card">
+        <img src="../../assets/features/group.png"  style="max-width: 200px !important;
+  aspect-ratio: 1 / 1;margin:auto;">
+        <h3>15 Students in a class<br>from all over India</h3>
+      </div>
+      </ng-template>
+    </owl-carousel-o>
+    <h2 align="center" class="mt-4 mb-3">Reviews By Our Students & Parents</h2>
+    <owl-carousel-o [options]="customOptions2">
+      <ng-template carouselSlide *ngFor="let review of reviews">
+        <app-review [review]="review"></app-review>
+      </ng-template>
+    </owl-carousel-o>
+    <!-- class="row m-0 mt-5 mb-5" -->
+    <div class="py-5"  style="background: linear-gradient(90deg, #ffa500, #bf4500);">
+          <app-contact-us id="contact"></app-contact-us>
+    </div>
+  </div>
+  <div class="footer" >
+    <a href="" id="about" class=""></a>
+    <h4 class="mt-2 text-warning">About Us</h4>
+    <p class=" text-white" style="font-size:100%">Srymak is the online learning platform for the scholars of tiers 6th to 10th, and the preparation of RMS and Sainik
+    school.
+    <br>
+    Interactive classes are allotted to the students with instant doubt clearing and with instantaneous tests, worksheets.
+    <br>
+    We aim to make the students understand the concepts, to permit them to examine or analyze more on the topic and go deep
+    to accumulate more.
+    <br>
+    Here, Srymak offers highly effective learning programs for the aspirants of this competitive world.
+    </p>
+    <h4 class="text-warning">What Makes us Different</h4>
+    <p class="text-white">Our platform is creating interactive learning experiences for every type of learner.<br>
+    We endeavor to provide the learners with a learning platform where they can learn to engage and be excited about
+    creating their path to discover the world.
+    <br>
+    We make the lesson interactive, enthusiastic and student's friendly.
+    <br>
+    We aim to make the learners stand in the competitive world.
+    </p>
+    <h4 class="text-warning">Why Choose Us</h4>
+    <p class="text-white">
+      Learning is pivotal for a student's success in academics and life. The digital age is deeply shaping the way students
+      learn and will also determine those Prospects. At our platform, we encourage students to grasp this fast, changing world
+      and wake up them ready for tomorrow by being their constant learning partner.
+      <br>
+      We provide you with these classes at a very reasonable price and designed this curriculum according to the student needs. So
+      that they can understand each and every aspect of the concept.
+
+    </p>
+    <h4 class="text-warning">Payment</h4>
+    <p class="text-white">SRYMAK offers you multiple payment methods. Payment gateway partners use secure encryption technology to keep
+      your
+      transaction details confidential at all times. You may use Internet Banking, Wallet and QR Support to make your
+      purchase.
+    </p>
+    <h4 class="text-warning">Contact Us </h4>
+    <p class="text-white">
+      Mobile - +91 721-7276-506 (4pm to 10pm)<br>
+      Email - support@srymak.com (Within 24 hours)
+    </p>
+    <hr class="text-white">
+    <div class='d-flex justify-content-between text-white'>
+      <div class="col-md-6 col-sm-12"><a class="text-white" target="_blank" href="https://www.srymak.com/privacypolicy">Privacy Policy</a>  | <a class="text-white" target="_blank" href="https://www.srymak.com/tcapply">Terms and conditions</a></div>
+      <div>SRYMAK Edu Services&reg;Pvt. Ltd.</div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="modalm" id="hurryup">
+  <div class="modalm-content">
+        <a class="close-btn" (mouseup)="openOrCloseModal('hurryup')"> <i class="fas fa-times"></i> </a>
+
+      <h5 class="text-white fs-5 mb-0 p-2 rounded-3"
+        style="text-align:center;background:red;font-weight:bold;cursor:pointer;animation:left-to-right 1s"
+        (click)="openOrCloseModal('hurryup');openOrCloseModal('registermodal')">Registration Started.<br>!!! Hurry Up Only Limited Seats !!!</h5>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<!-- END MODEL OF REGISTRATION  -->

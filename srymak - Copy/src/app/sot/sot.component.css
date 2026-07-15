@@ -1,0 +1,377 @@
+/* Header Css  START --------------------------------------> */
+nav {
+  position: sticky;
+  font-weight: bolder;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.nav-item {
+  user-select: none;
+}
+
+
+.collapse {
+  font-weight: 500;
+}
+
+.contact-btns {
+  display: flex;
+}
+
+.contact-btns button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: transparent;
+  border: 0.1rem solid whitesmoke;
+  border-radius: 50%;
+  color: whitesmoke;
+  width: 2rem;
+  height: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contact-btns button:hover {
+  background-color: white;
+  color: #0f1f36;
+}
+
+.contact-btns button:hover>.on-hover {
+  display: block;
+}
+.mainbody{
+  padding-top: 4rem;
+}
+/* .btn-call:hover::after{
+  content:'+917217276506';
+  position:absolute;
+  top:125%;
+  right:-50%;
+  transform:translateX(50%);
+  padding: 0.4rem;
+  background-color:white;
+  border: 0.1rem solid black;
+  border-radius: 5px;
+} */
+.on-hover {
+  display: none;
+  position: absolute;
+  color: black;
+  top: 135%;
+  left: 0%;
+  transform: translateX(-90%);
+  padding: 0.4rem;
+  background-color: white;
+  border: 0.1rem solid black;
+  border-radius: 5px;
+}
+
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link.btn-login {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: transparent;
+  border: 0.1rem solid whitesmoke;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  color: whitesmoke;
+}
+
+.nav-link.btn-login:hover {
+  color: #0f1f36 !important;
+  background-color: whitesmoke;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.contact-btns.mobile {
+  display: none;
+}
+
+.contact-btns.desktop {
+  display: flex;
+}
+
+@media only screen and (max-width: 991px) {
+  .contact-btns.desktop {
+    display: none;
+  }
+
+  .contact-btns.mobile {
+    display: flex;
+  }
+
+  .btn-login {
+    width: 100%;
+    margin: 0 !important;
+    margin-top: 0.75rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .modalm-content {
+    width: 66.66%;
+  }
+
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand p {
+  margin: 0;
+  margin-left: 0.25rem;
+}
+
+@media only screen and (max-width: 425px) {
+  .navbar-toggler {
+    padding: 0;
+    margin: 0.25rem;
+    border: none;
+  }
+
+  .modalm-content {
+    width: 90%;
+  }
+
+  .leftside img {
+    width: 100% !important;
+    max-height: 100vh;
+  }
+
+  .navbar-toggler {
+    font-size: medium;
+  }
+
+  .rightside {
+    margin-top: 3rem;
+  }
+
+
+}
+
+@media only screen and (max-width: 320px) {
+  .navbar-toggler {
+    font-size: small;
+  }
+
+  .navbar-brand {
+    font-size: medium;
+    margin: 0;
+  }
+
+  .navbar-brand img {
+    height: 20px;
+  }
+
+  .contact-btns button {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 75%;
+  }
+
+  .rightside {
+    margin-top: 3rem;
+  }
+}
+/* Header CSS END xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Form CSS Start -------------------------------------------------> */
+.quiz-div{
+  border: 5px solid deeppink;
+  border-radius: 5px;
+  text-align: center;
+}
+.quiz-header{
+  background: #f8f5f2;
+  border-bottom: 2px solid #e6e3e0f8;
+}
+.quiz-submit button{
+  width: 100%;
+  max-width: 15rem;
+  border: none;
+  border-radius: 100rem;
+  background-color: #ffa500;
+  color: whitesmoke;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size:large;
+}
+.row{--bs-gutter-x:0 !important;}
+.quiz-user-details{
+  font-weight: bold;
+
+}
+.required{
+  color: red;
+}
+.small-hint{
+  font-size: smaller;
+  font-weight: lighter;
+}
+.fill-blank-ques{
+
+}
+.fill-blank-ques p{
+  font-size: large;
+  margin-bottom: 0.2rem;
+}
+.fill-blank-ques input{
+  width: 100%;
+}
+.select-ques p{
+  font-size: large;
+  margin-bottom: 0.2rem;
+}
+.select-ques select{
+  width: 100%;
+}
+.multiple-choice-ques{
+  background-color: #f1f1f1;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.multiple-choice-ques p{
+  font-size: large;
+  margin-bottom: 0.6rem;
+}
+.multiple-choice-ques label{
+  width: 100%;
+  max-width: 18rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 100rem;
+  padding: 0.3rem 0.6rem;
+  margin-bottom: 0.7rem;
+}
+.multiple-choice-ques label::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+}
+.multiple-choice-ques input[type="radio"]{
+  display: none;
+}
+.multiple-choice-ques input[type="radio"]:checked +label{
+  background-color: #ffa500;
+  border: 1px solid #ffa500;
+  color: whitesmoke;
+  font-weight: 600;
+}
+.multiple-choice-ques input[type="radio"]:checked +label::before{
+  border: 6px solid whitesmoke;
+}
+/* .multiple-choice-ques input[type="radio"]{
+  appearance: none;
+  background-color: #fff;
+  margin-right: 0.5rem;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+}
+.multiple-choice-ques input[type="radio"]:checked +label{
+  background-color: #ffa500;
+}
+.multiple-choice-ques input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #ffa500;
+}
+.multiple-choice-ques input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+.multiple-choice-ques input[type="radio"]{
+
+  display: grid;
+  place-content: center;
+} */
+/* Form CSS END xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.top-section {
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(-45deg, #bf4500, #ffa500);
+  margin: 0;
+}
+.rightside {
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 1px 1px 25px black;
+}
+.enroll-btn {
+  background: linear-gradient(-45deg, #bf4500, #ffa500);
+  border: 0.15rem solid whitesmoke;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+
+}
+.enroll-btn:hover {
+  background: linear-gradient(-45deg, #ffa500, #bf4500);
+}
+.leftside {
+  text-align: center;
+}
+.leftside img {
+  width: auto !important;
+  max-height: 65vh;
+  transform:rotate(0deg);
+  max-width: 100%;
+}
+.detail-card h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+@media only screen and (max-width: 1024px) {
+  .modalm-content {
+    width:60%;
+  }
+  .leftside img {
+    width: auto !important;
+    max-height: 50vh;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modalm-content {
+    width:70%;
+  }
+}

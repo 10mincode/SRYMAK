@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-md-4 px-xs-0 sticky-top" style="background-color: #0f1f36;">
+  <div class="container-fluid">
+    <div class="col-sm-5 col-md-3 align-items-center d-flex">
+      <button class="navbar-toggler mx-md-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/sot"><img src="../../assets/mainicon.png" style="height: 30px;" alt="">
+        <p>SRYMAK SOT</p>
+      </a>
+    </div>
+    <div class="contact-btns mobile">
+      <a href="tel:+9105653553824"><button class="btn-call mx-2">
+          <i class="fas fa-phone"></i>
+          <div class="on-hover">
+            <h6>05653553824</h6>
+          </div>
+        </button></a>
+      <a href="mailto:support@srymak.com"> <button class="btn-email mx-2">
+          <i class="fas fa-envelope"></i>
+          <div class="on-hover">
+            <h6>support@srymak.com</h6>
+          </div>
+        </button></a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end mx-4" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" fragment="eligibility" routerLink="/sot">Eligibility</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" fragment="eligibility" routerLink="/sot">Prize Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" fragment="contact" routerLink="/home">What is SOT&nbsp;?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" fragment="faqs" routerLink="/sot">FAQs</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link btn-login" (click)="openOrCloseModal('registermodal')" *ngIf="!loggedin"
+            style="font-weight: 900; color:bisque">Register / Login</a>
+          <a class="nav-link btn-login" routerLink="/dashboard" *ngIf="loggedin"
+            style="font-weight: 900; color:bisque">Go to Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-login" routerLink="/"
+            style="font-weight: 900; color:bisque">SRYMAK</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="contact-btns desktop">
+      <a href="tel:+917217276506"><button class="btn-call mx-2">
+          <i class="fas fa-phone"></i>
+          <div class="on-hover">
+            <h6>+917217276506</h6>
+          </div>
+        </button></a>
+      <a href="mailto:support@srymak.com"> <button class="btn-email mx-2">
+          <i class="fas fa-envelope"></i>
+          <div class="on-hover">
+            <h6>support@srymak.com</h6>
+          </div>
+        </button></a>
+    </div>
+
+  </div>
+</nav>
+<router-outlet #o="outlet"></router-outlet>

@@ -1,0 +1,116 @@
+.rightside {
+  text-align: right;
+  text-shadow: 1px 1px 25px black;
+}
+
+.errinput {
+  border: 2px solid #f00;
+  border-radius: 4px;
+  color: #f00;
+}
+
+.errinput::-webkit-input-placeholder {
+  color: #ff000085;
+}
+
+.inputBox {
+  background-color: white;
+  padding: 1.5rem;
+}
+
+label {
+  color: black;
+}
+
+input {
+  color: black;
+}
+
+input:focus {
+  outline: none;
+}
+
+.inputBox input:focus~label,
+.inputBox input:valid~label {
+  top: -1rem;
+  left: 1rem;
+  color: black;
+  font-size: small;
+}
+
+.inputBox textarea {
+  width: 100%;
+  padding: 0.2rem;
+  font-size: medium;
+  color: black;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  border: none;
+  outline: none;
+  border-bottom: 0.1rem solid grey;
+  background: transparent;
+
+}
+
+.inputBox textarea:focus~label,
+.inputBox textarea:valid~label {
+  top: 0rem;
+  left: 2rem;
+  color: black;
+  font-size: small;
+}
+
+.inputBox input:focus~label,
+.inputBox input:valid~label {
+  top: 0rem;
+  left: 2rem;
+  color: black;
+  font-size: small;
+}
+
+.inputBox label {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  user-select: none;
+}
+
+
+.enroll-btn {
+  background: linear-gradient(-45deg, #bf4500, #ffa500);
+  border: 0.15rem solid whitesmoke;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(-45deg, #ffa500, #bf4500);
+}
+
+.leftside {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.leftside img {
+  width: auto !important;
+  max-height: 65vh;
+  max-width: 100%;
+}
+
+.top-section {
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(-45deg, #bf4500, #ffa500);
+  margin: 0 !important;
+}

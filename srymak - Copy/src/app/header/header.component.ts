@@ -1,0 +1,999 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { AppserviceService } from '../appservice.service';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
+})
+export class HeaderComponent implements OnInit {
+  fragment: any;
+  defaultvalue: any;
+  constructor(private router: Router,private route: ActivatedRoute, private cookieService: CookieService, private appService: AppserviceService, private http: HttpClient) { }
+  statelist: any[] = ["Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jammu and Kashmir",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttarakhand",
+    "Uttar Pradesh",
+    "West Bengal",
+    "Andaman and Nicobar Islands",
+    "Chandigarh",
+    "Dadra and Nagar Haveli",
+    "Daman and Diu",
+    "Delhi",
+    "Puducherry"]
+  citylist: any = {
+    "Andaman and Nicobar Islands": [
+    'Nicobar',
+    'North and Middle Andaman',
+    'South Andaman'
+    ],
+    "Andhra Pradesh": [
+      "Adilabad",
+      "Anantapur",
+      "Chittoor",
+      "Kakinada",
+      "Guntur",
+      "Hyderabad",
+      "Karimnagar",
+      "Khammam",
+      "Krishna",
+      "Kurnool",
+      "Mahbubnagar",
+      "Medak",
+      "Nalgonda",
+      "Nizamabad",
+      "Ongole",
+      "Hyderabad",
+      "Srikakulam",
+      "Nellore",
+      "Visakhapatnam",
+      "Vizianagaram",
+      "Warangal",
+      "Eluru",
+      "Kadapa",
+    ],
+    "Arunachal Pradesh": [
+      "Anjaw",
+      "Changlang",
+      "East Siang",
+      "Kurung Kumey",
+      "Lohit",
+      "Lower Dibang Valley",
+      "Lower Subansiri",
+      "Papum Pare",
+      "Tawang",
+      "Tirap",
+      "Dibang Valley",
+      "Upper Siang",
+      "Upper Subansiri",
+      "West Kameng",
+      "West Siang",
+    ],
+    "Assam": [
+      "Baksa",
+      "Barpeta",
+      "Bongaigaon",
+      "Cachar",
+      "Chirang",
+      "Darrang",
+      "Dhemaji",
+      "Dima Hasao",
+      "Dhubri",
+      "Dibrugarh",
+      "Goalpara",
+      "Golaghat",
+      "Hailakandi",
+      "Jorhat",
+      "Kamrup",
+      "Kamrup Metropolitan",
+      "Karbi Anglong",
+      "Karimganj",
+      "Kokrajhar",
+      "Lakhimpur",
+      "Marigaon",
+      "Nagaon",
+      "Nalbari",
+      "Sibsagar",
+      "Sonitpur",
+      "Tinsukia",
+      "Udalguri",
+    ],
+    "Bihar": [
+      "Araria",
+      "Arwal",
+      "Aurangabad",
+      "Banka",
+      "Begusarai",
+      "Bhagalpur",
+      "Bhojpur",
+      "Buxar",
+      "Darbhanga",
+      "East Champaran",
+      "Gaya",
+      "Gopalganj",
+      "Jamui",
+      "Jehanabad",
+      "Kaimur",
+      "Katihar",
+      "Khagaria",
+      "Kishanganj",
+      "Lakhisarai",
+      "Madhepura",
+      "Madhubani",
+      "Munger",
+      "Muzaffarpur",
+      "Nalanda",
+      "Nawada",
+      "Patna",
+      "Purnia",
+      "Rohtas",
+      "Saharsa",
+      "Samastipur",
+      "Saran",
+      "Sheikhpura",
+      "Sheohar",
+      "Sitamarhi",
+      "Siwan",
+      "Supaul",
+      "Vaishali",
+      "West Champaran",
+      "Chandigarh",
+    ],
+    "Chandigarh": [
+      'Chandigarh'
+    ],
+    "Chhattisgarh": [
+      "Bastar",
+      "Bijapur",
+      "Bilaspur",
+      "Dantewada",
+      "Dhamtari",
+      "Durg",
+      "Jashpur",
+      "Janjgir-Champa",
+      "Korba",
+      "Koriya",
+      "Kanker",
+      "Kabirdham (Kawardha)",
+      "Mahasamund",
+      "Narayanpur",
+      "Raigarh",
+      "Rajnandgaon",
+      "Raipur",
+      "Surguja",
+    ],
+    "Dadra and Nagar Haveli": [
+      "Dadra and Nagar Haveli"
+    ],
+    "Daman and Diu": [
+      "Daman",
+      "Diu",
+    ],
+    "Delhi": [
+      "Central Delhi",
+      "East Delhi",
+      "New Delhi",
+      "North Delhi",
+      "North East Delhi",
+      "North West Delhi",
+      "South Delhi",
+      "South West Delhi",
+      "West Delhi",
+    ],
+    "Goa": [
+      "North Goa",
+      "Panaji",
+      "South Goa"
+    ],
+    "Gujarat": [
+      "Ahmedabad",
+      "Amreli district",
+      "Anand",
+      "Banaskantha",
+      "Bharuch",
+      "Bhavnagar",
+      "Dahod",
+      "The Dangs",
+      "Gandhinagar",
+      "Jamnagar",
+      "Junagadh",
+      "Kutch",
+      "Kheda",
+      "Mehsana",
+      "Narmada",
+      "Navsari",
+      "Patan",
+      "Panchmahal",
+      "Porbandar",
+      "Rajkot",
+      "Sabarkantha",
+      "Surendranagar",
+      "Surat",
+      "Vyara",
+      "Vadodara",
+      "Valsad",
+    ],
+    "Haryana": [
+      "Ambala",
+      "Bhiwani",
+      "Faridabad",
+      "Fatehabad",
+      "Gurgaon",
+      "Hissar",
+      "Jhajjar",
+      "Jind",
+      "Karnal",
+      "Kaithal",
+      "Kurukshetra",
+      "Mahendragarh",
+      "Mewat",
+      "Palwal",
+      "Panchkula",
+      "Panipat",
+      "Rewari",
+      "Rohtak",
+      "Sirsa",
+      "Sonipat",
+      "Yamuna Nagar",
+    ],
+    "Himachal Pradesh": [
+      "Bilaspur",
+      "Chamba",
+      "Hamirpur",
+      "Kangra",
+      "Kinnaur",
+      "Kullu",
+      "Lahaul and Spiti",
+      "Mandi",
+      "Shimla",
+      "Sirmaur",
+      "Solan",
+      "Una",
+    ],
+    "Jammu and Kashmir": [
+      "Anantnag",
+      "Badgam",
+      "Bandipora",
+      "Baramulla",
+      "Doda",
+      "Ganderbal",
+      "Jammu",
+      "Kargil",
+      "Kathua",
+      "Kishtwar",
+      "Kupwara",
+      "Kulgam",
+      "Leh",
+      "Poonch",
+      "Pulwama",
+      "Rajauri",
+      "Ramban",
+      "Reasi",
+      "Samba",
+      "Shopian",
+      "Srinagar",
+      "Udhampur",
+    ],
+    "Jharkhand": [
+      "Bokaro",
+      "Chatra",
+      "Deoghar",
+      "Dhanbad",
+      "Dumka",
+      "East Singhbhum",
+      "Garhwa",
+      "Giridih",
+      "Godda",
+      "Gumla",
+      "Hazaribag",
+      "Jamtara",
+      "Khunti",
+      "Koderma",
+      "Latehar",
+      "Lohardaga",
+      "Pakur",
+      "Palamu",
+      "Ramgarh",
+      "Ranchi",
+      "Sahibganj",
+      "Seraikela Kharsawan",
+      "Simdega",
+      "West Singhbhum",
+    ],
+    "Karnataka": [
+      "Bagalkot",
+      "Bangalore Rural",
+      "Bangalore Urban",
+      "Belgaum",
+      "Bellary",
+      "Bidar",
+      "Bijapur",
+      "Chamarajnagar",
+      "Chikkamagaluru",
+      "Chikkaballapur",
+      "Chitradurga",
+      "Davanagere",
+      "Dharwad",
+      "Dakshina Kannada",
+      "Gadag",
+      "Gulbarga",
+      "Hassan",
+      "Haveri district",
+      "Kodagu",
+      "Kolar",
+      "Koppal",
+      "Mandya",
+      "Mysore",
+      "Raichur",
+      "Shimoga",
+      "Tumkur",
+      "Udupi",
+      "Uttara Kannada",
+      "Ramanagara",
+      "Yadgir",
+    ],
+    "Kerala": [
+      "Alappuzha",
+      "Ernakulam",
+      "Idukki",
+      "Kannur",
+      "Kasaragod",
+      "Kollam",
+      "Kottayam",
+      "Kozhikode",
+      "Malappuram",
+      "Palakkad",
+      "Pathanamthitta",
+      "Thrissur",
+      "Thiruvananthapuram",
+      "Wayanad",
+    ],
+    "Madhya Pradesh": [
+      "Alirajpur",
+      "Anuppur",
+      "Ashok Nagar",
+      "Balaghat",
+      "Barwani",
+      "Betul",
+      "Bhind",
+      "Bhopal",
+      "Burhanpur",
+      "Chhatarpur",
+      "Chhindwara",
+      "Damoh",
+      "Datia",
+      "Dewas",
+      "Dhar",
+      "Dindori",
+      "Guna",
+      "Gwalior",
+      "Harda",
+      "Hoshangabad",
+      "Indore",
+      "Jabalpur",
+      "Jhabua",
+      "Katni",
+      "Khandwa (East Nimar)",
+      "Khargone (West Nimar)",
+      "Mandla",
+      "Mandsaur",
+      "Morena",
+      "Narsinghpur",
+      "Neemuch",
+      "Panna",
+      "Rewa",
+      "Rajgarh",
+      "Ratlam",
+      "Raisen",
+      "Sagar",
+      "Satna",
+      "Sehore",
+      "Seoni",
+      "Shahdol",
+      "Shajapur",
+      "Sheopur",
+      "Shivpuri",
+      "Sidhi",
+      "Singrauli",
+      "Tikamgarh",
+      "Ujjain",
+      "Umaria",
+      "Vidisha",
+    ],
+    "Maharashtra": [
+      "Ahmednagar",
+      "Akola",
+      "Amravati",
+      "Aurangabad",
+      "Bhandara",
+      "Beed",
+      "Buldhana",
+      "Chandrapur",
+      "Dhule",
+      "Gadchiroli",
+      "Gondia",
+      "Hingoli",
+      "Jalgaon",
+      "Jalna",
+      "Kolhapur",
+      "Latur",
+      "Mumbai City",
+      "Mumbai suburban",
+      "Nandurbar",
+      "Nanded",
+      "Nagpur",
+      "Nashik",
+      "Osmanabad",
+      "Parbhani",
+      "Pune",
+      "Raigad",
+      "Ratnagiri",
+      "Sindhudurg",
+      "Sangli",
+      "Solapur",
+      "Satara",
+      "Thane",
+      "Wardha",
+      "Washim",
+      "Yavatmal",
+    ],
+    "Manipur": [
+      "Bishnupur",
+      "Churachandpur",
+      "Chandel",
+      "Imphal East",
+      "Senapati",
+      "Tamenglong",
+      "Thoubal",
+      "Ukhrul",
+      "Imphal West",
+    ],
+    "Meghalaya": [
+      "East Garo Hills",
+      "East Khasi Hills",
+      "Jaintia Hills",
+      "Ri Bhoi",
+      "South Garo Hills",
+      "West Garo Hills",
+      "West Khasi Hills",
+    ],
+    "Mizoram": [
+      "Aizawl",
+      "Champhai",
+      "Kolasib",
+      "Lawngtlai",
+      "Lunglei",
+      "Mamit",
+      "Saiha",
+      "Serchhip",
+    ],
+    "Nagaland": [
+      "Dimapur",
+      "Kohima",
+      "Mokokchung",
+      "Mon",
+      "Phek",
+      "Tuensang",
+      "Wokha",
+      "Zunheboto",
+    ],
+    "Odisha": [
+      "Angul",
+      "Boudh (Bauda)",
+      "Bhadrak",
+      "Balangir",
+      "Bargarh (Baragarh)",
+      "Balasore",
+      "Cuttack",
+      "Debagarh (Deogarh)",
+      "Dhenkanal",
+      "Ganjam",
+      "Gajapati",
+      "Jharsuguda",
+      "Jajpur",
+      "Jagatsinghpur",
+      "Khordha",
+      "Kendujhar (Keonjhar)",
+      "Kalahandi",
+      "Kandhamal",
+      "Koraput",
+      "Kendrapara",
+      "Malkangiri",
+      "Mayurbhanj",
+      "Nabarangpur",
+      "Nuapada",
+      "Nayagarh",
+      "Puri",
+      "Rayagada",
+      "Sambalpur",
+      "Subarnapur (Sonepur)",
+      "Sundergarh",
+    ],
+    "Puducherry": [
+      "Karaikal",
+      "Mahe",
+      "Pondicherry",
+      "Yanam",
+    ],
+    "Punjab": [
+      "Amritsar",
+      "Barnala",
+      "Bathinda",
+      "Firozpur",
+      "Faridkot",
+      "Fatehgarh Sahib",
+      "Fazilka",
+      "Gurdaspur",
+      "Hoshiarpur",
+      "Jalandhar",
+      "Kapurthala",
+      "Ludhiana",
+      "Mansa",
+      "Moga",
+      "Sri Muktsar Sahib",
+      "Pathankot",
+      "Patiala",
+      "Rupnagar",
+      "Ajitgarh (Mohali)",
+      "Sangrur",
+      "Nawanshahr",
+      "Tarn Taran",
+    ],
+    "Rajasthan": [
+      "Ajmer",
+      "Alwar",
+      "Bikaner",
+      "Barmer",
+      "Banswara",
+      "Bharatpur",
+      "Baran",
+      "Bundi",
+      "Bhilwara",
+      "Churu",
+      "Chittorgarh",
+      "Dausa",
+      "Dholpur",
+      "Dungapur",
+      "Ganganagar",
+      "Hanumangarh",
+      "Jhunjhunu",
+      "Jalore",
+      "Jodhpur",
+      "Jaipur",
+      "Jaisalmer",
+      "Jhalawar",
+      "Karauli",
+      "Kota",
+      "Nagaur",
+      "Pali",
+      "Pratapgarh",
+      "Rajsamand",
+      "Sikar",
+      "Sawai Madhopur",
+      "Sirohi",
+      "Tonk",
+      "Udaipur",
+    ],
+    "Sikkim": [
+      "East Sikkim",
+      "North Sikkim",
+      "South Sikkim",
+      "West Sikkim",
+    ],
+    "Tamil Nadu": [
+      "Ariyalur",
+      "Chennai",
+      "Coimbatore",
+      "Cuddalore",
+      "Dharmapuri",
+      "Dindigul",
+      "Erode",
+      "Kanchipuram",
+      "Kanyakumari",
+      "Karur",
+      "Madurai",
+      "Nagapattinam",
+      "Nilgiris",
+      "Namakkal",
+      "Perambalur",
+      "Pudukkottai",
+      "Ramanathapuram",
+      "Salem",
+      "Sivaganga",
+      "Tirupur",
+      "Tiruchirappalli",
+      "Theni",
+      "Tirunelveli",
+      "Thanjavur",
+      "Thoothukudi",
+      "Tiruvallur",
+      "Tiruvarur",
+      "Tiruvannamalai",
+      "Vellore",
+      "Viluppuram",
+      "Virudhunagar",
+    ],
+    "Telangana": [
+      'Adilabad',
+      'Bhadradri Kothagudem',
+      'Hyderabad',
+      'Jagtial',
+      'Jangaon',
+      'Jayashankar Bhoopalpally',
+      'Jogulamba Gadwal',
+      'Kamareddy',
+      'Karimnagar',
+       'Khammam',
+       'Komaram Bheem Asifabad',
+       'Mahabubabad',
+       'Mahabubnagar',
+       'Mancherial',
+       'Medak',
+       'Medchal',
+       'Nagarkurnool',
+       'Nalgonda',
+       'Nirmal',
+       'Nizamabad',
+       'Peddapalli',
+       'Rajanna Sircilla',
+       'Rangareddy',
+       'Sangareddy',
+       'Siddipet',
+       'Suryapet',
+       'Vikarabad',
+       'Wanaparthy',
+       'Warangal (Rural)',
+       'Warangal (Urban)',
+       'Yadadri Bhuvanagiri',
+    ],
+    "Tripura": [
+      "Dhalai",
+      "North Tripura",
+      "South Tripura",
+      "Khowai",
+      "West Tripura",
+    ],
+    "Uttar Pradesh": [
+      "Agra",
+      "Allahabad",
+      "Aligarh",
+      "Ambedkar Nagar",
+      "Auraiya",
+      "Azamgarh",
+      "Barabanki",
+      "Budaun",
+      "Bagpat",
+      "Bahraich",
+      "Bijnor",
+      "Ballia",
+      "Banda",
+      "Balrampur",
+      "Bareilly",
+      "Basti",
+      "Bulandshahr",
+      "Chandauli",
+      "Chhatrapati Shahuji Maharaj Nagar",
+      "Chitrakoot",
+      "Deoria",
+      "Etah",
+      "Kanshi Ram Nagar",
+      "Etawah",
+      "Firozabad",
+      "Farrukhabad",
+      "Fatehpur",
+      "Faizabad",
+      "Gautam Buddh Nagar",
+      "Gonda",
+      "Ghazipur",
+      "Gorakhpur",
+      "Ghaziabad",
+      "Hamirpur",
+      "Hardoi",
+      "Mahamaya Nagar",
+      "Jhansi",
+      "Jalaun",
+      "Jyotiba Phule Nagar",
+      "Jaunpur district",
+      "Ramabai Nagar (Kanpur Dehat)",
+      "Kannauj",
+      "Kanpur",
+      "Kaushambi",
+      "Kushinagar",
+      "Lalitpur",
+      "Lakhimpur Kheri",
+      "Lucknow",
+      "Mau",
+      "Meerut",
+      "Maharajganj",
+      "Mahoba",
+      "Mirzapur",
+      "Moradabad",
+      "Mainpuri",
+      "Mathura",
+      "Muzaffarnagar",
+      "Panchsheel Nagar district (Hapur)",
+      "Pilibhit",
+      "Shamli",
+      "Pratapgarh",
+      "Rampur",
+      "Raebareli",
+      "Saharanpur",
+      "Sitapur",
+      "Shahjahanpur",
+      "Sant Kabir Nagar",
+      "Siddharthnagar",
+      "Sonbhadra",
+      "Sant Ravidas Nagar",
+      "Sultanpur",
+      "Shravasti",
+      "Unnao",
+      "Varanasi",
+    ],
+    "Uttarakhand": [
+      "Almora",
+      "Bageshwar",
+      "Chamoli",
+      "Champawat",
+      "Dehradun",
+      "Haridwar",
+      "Nainital",
+      "Pauri Garhwal",
+      "Pithoragarh",
+      "Rudraprayag",
+      "Tehri Garhwal",
+      "Udham Singh Nagar",
+      "Uttarkashi",
+    ],
+    "West Bengal": [
+      "Birbhum",
+      "Bankura",
+      "Bardhaman",
+      "Darjeeling",
+      "Dakshin Dinajpur",
+      "Hooghly",
+      "Howrah",
+      "Jalpaiguri",
+      "Cooch Behar",
+      "Kolkata",
+      "Maldah",
+      "Paschim Medinipur",
+      "Purba Medinipur",
+      "Murshidabad",
+      "Nadia",
+      "North 24 Parganas",
+      "South 24 Parganas",
+      "Purulia",
+      "Uttar Dinajpur",
+    ],
+  }
+  error = "Hello World!"
+  showerror=false;
+  getcitylist(state: any|null) {
+    this.cities=this.citylist[state];
+  }
+  cities: any;
+  otp: number=1;
+  isOtpSend: boolean=false;
+  ClassList1: Array<any> = [
+    {id:7,Name:"English Speaking",Subitems:["Spoken English"]},
+    {id:6,Name:"RMS and Sainik",Subitems:["Class 6","Class 9"]},
+    {id:1,Name:"Class 6",Subitems:["Math, English, Science, SSc","Math, Science","Math, Science, English","Math, Science, SSc"]},
+    {id:2,Name:"Class 7",Subitems:["Math, English, Science, SSc","Math, Science","Math, Science, English","Math, Science, SSc"]},
+    {id:3,Name:"Class 8",Subitems:["Math, English, Science, SSc","Math, Science","Math, Science, English","Math, Science, SSc"]},
+    {id:4,Name:"Class 9",Subitems:["Math, English, Science, SSc","Math, Science","Math, Science, English","Math, Science, SSc"]},
+    {id:5,Name:"Class 10",Subitems:["Math, English, Science, SSc","Math, Science","Math, Science, English","Math, Science, SSc"]},
+    {id:8,Name:"Class 11",Subitems:["PCM","PCB","Commerce"]},
+    {id:9,Name:"Class 12",Subitems:["PCM","PCB","Commerce"]}
+  ]
+  // statelist =this.stateCityList.getstatelist();
+  register: boolean = true;
+
+  loginForm: FormGroup = new FormGroup({
+    email: new FormControl(null),
+    password: new FormControl(null)
+  });
+  loggedin: boolean = false;
+  registerForm: FormGroup = new FormGroup({
+    fn:new FormControl(null,Validators.required),
+    ln: new FormControl(null, Validators.required),
+    age: new FormControl(5,[Validators.min(5),Validators.max(100),Validators.required]),
+    dob:new FormControl(null, Validators.required),
+    class:new FormControl("",Validators.required),
+    course:new FormControl("",Validators.required),
+    subcourse: new FormControl("",Validators.required),
+    email: new FormControl(null,[Validators.required,Validators.email]),
+    password: new FormControl(null,[Validators.required, Validators.minLength(8)]),
+    cpass: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+    mobile: new FormControl(null, [Validators.required, Validators.pattern('[- +()0-9]+'), Validators.minLength(10)]),
+    address: new FormControl(""),
+    city: new FormControl("",Validators.required),
+    state:new FormControl("",Validators.required),
+  });
+  @Input() active_tab: any=new EventEmitter<number>();
+  ngOnInit(): void {
+    this.route.fragment.subscribe(fragment => { this.fragment = fragment; });
+    if (this.cookieService.get('user') != "") {
+      this.loggedin = true;
+    }
+    this.defaultvalue = this.registerForm.controls.subcourse.value;
+  }
+  subItems1: Array<any> = [];
+  changeItems($event: any, itemname: any) {
+    this.subItems1 = this.ClassList1.find(con => con.id == itemname).Subitems;
+    this.registerForm.controls.subcourse.setValue("");
+  }
+  log(l: any) {
+    console.log(l)
+  }
+  LOGIN_USER() {
+    this.http.post<any>('https://server.srymak.com/get_stu_d', {
+      email: this.loginForm.controls.email.value, passw: this.loginForm.controls.password.value
+    }).subscribe((data) => {
+      if (data.success == true) {
+        this.cookieService.set("user", JSON.stringify({ email:data.details.email, password:btoa(this.loginForm.controls.password.value) }),14);
+        this.router.navigate(['dashboard'])
+      } else {
+        this.error = data.details;
+        console.log("Some Error");
+        this.showerror = true;
+      }
+    })
+  }
+  REGISTER_USER() {
+    this.http.post<any>('https://server.srymak.com/register_user', {
+      email        : this.registerForm.controls.email.value,
+      password        : this.registerForm.controls.password.value,
+      fn        : this.registerForm.controls.fn.value,
+      mobile        : this.registerForm.controls.mobile.value,
+      ln        : this.registerForm.controls.ln.value,
+      class        : this.registerForm.controls.class.value,
+      course: this.registerForm.controls.course.value + this.registerForm.controls.subcourse.value,
+      state        : this.registerForm.controls.state.value,
+      dob        : this.registerForm.controls.dob.value,
+      age        : this.registerForm.controls.age.value,
+      address        : this.registerForm.controls.address.value,
+      city        : this.registerForm.controls.city.value,
+    }).subscribe((data) => {
+      if (data.success == false) {
+        this.isOtpSend = false;
+        this.otp = 1;
+      } else {
+        this.cookieService.set("user", JSON.stringify({ email: data.details.email, password: btoa(this.registerForm.controls.password.value) }));
+        this.router.navigate(['dashboard']);
+      }
+    })
+  }
+  openOrCloseModal(id: string) {
+    this.register = true;
+    var modal = (document.getElementById(id) as HTMLDivElement);
+    var modal_form = (modal.getElementsByTagName("form")[0] as HTMLFormElement);
+    if (modal_form) { modal_form.reset(); }
+    var bodyelement = (document.getElementById("mainbody") as HTMLBodyElement)
+    if (modal.style.display == 'flex') {
+      modal.style.display = 'none';
+      bodyelement.style.overflow = 'auto';
+    } else {
+      if (id == "registermodal" && this.loggedin) {
+        this.router.navigate(['dashboard']);
+      }
+      modal.style.display = 'flex';
+      bodyelement.style.overflow = 'hidden';
+    }
+  }
+  Check_OTP() {
+    var otp = (document.getElementById("myotpemail") as HTMLInputElement).value
+    if (Number(otp) == this.otp && this.otp > 9999) {
+      this.REGISTER_USER();
+    } else {
+      this.error = "INCORRECT OTP TRY AGAIN";
+      this.showerror = true;
+    }
+  }
+  CHECK_USER() {
+    if (this.registerForm.controls.password.value != this.registerForm.controls.cpass.value) {
+      this.error = "Password and Confirm Password not matched";
+      this.showerror = true;
+    } else {
+      this.http.post<any>('https://server.srymak.com/check_user', {
+        email: this.registerForm.controls.email.value,
+        password: this.registerForm.controls.password.value,
+        fn: this.registerForm.controls.fn.value,
+        mobile: this.registerForm.controls.mobile.value,
+        ln: this.registerForm.controls.ln.value,
+        class: this.registerForm.controls.class.value,
+        course: this.registerForm.controls.course.value,
+        state: this.registerForm.controls.state.value,
+        dob: this.registerForm.controls.dob.value,
+        age: this.registerForm.controls.age.value,
+        address: this.registerForm.controls.address.value,
+        city: this.registerForm.controls.city.value,
+      }).subscribe((data) => {
+        if (data.success == false) {
+          this.error = data.details;
+          this.showerror = true;
+        } else {
+          this.REGISTER_USER();
+        }
+      })
+    }
+  }
+  Send_OTP() {
+    this.showerror = false;
+    var otp = Math.floor(Math.random() * 99999) + 10000;
+    var mobilenumber = (document.getElementById("myemail") as HTMLInputElement).value;
+    var url = `https://server.srymak.com/send_otp/${mobilenumber}`;
+    console.log(url);
+    this.appService.getOTP(url).subscribe(response => {
+      console.log(response);
+      this.isOtpSend = true;
+      this.otp = response.otp;
+      this.expireotp();
+    },
+      error => {
+        console.log(error);
+      });
+  }
+
+  onlyNumberKey(evt: any) {
+
+    // Only ASCII character in that range allowed
+    var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+    if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57)
+      return false;
+    return true;
+  }
+  private delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  private async expireotp() {
+    // Sleep thread for 3 seconds
+    var otp = this.otp;
+    await this.delay(10 * 1000 * 60);
+    if (this.otp==otp)
+      this.otp = 2;
+      window.alert("YOUR OTP HAS BEEN EXPIRED")
+  }
+  togglePassword(inputid:string,iconid:string){
+    const input_field=(document.getElementById(inputid) as HTMLInputElement);
+    const icon_field=(document.getElementById(iconid) as HTMLElement);
+    switch (input_field.type){
+      case 'password':
+        input_field.type='text';
+        icon_field.classList.toggle('fa-eye-slash');
+        break;
+      case 'text':
+        input_field.type='password';
+        icon_field.classList.toggle('fa-eye-slash');
+        break;
+    }
+
+  }
+}

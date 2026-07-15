@@ -1,0 +1,119 @@
+.quiz-div{
+    border: 5px solid deeppink;
+    border-radius: 5px;
+    text-align: center;
+}
+.quiz-header{
+    background: #f8f5f2;
+    border-bottom: 2px solid #e6e3e0f8;
+}
+.quiz-submit button{
+    width: 100%;
+    max-width: 15rem;
+    border: none;
+    border-radius: 100rem;
+    background-color: #ffa500;
+    color: whitesmoke;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size:large;
+}
+.row{--bs-gutter-x:0 !important;}
+.quiz-user-details{
+    font-weight: bold;
+    
+}
+.required{
+    color: red;
+}
+.small-hint{
+    font-size: smaller;
+    font-weight: lighter;
+}
+.fill-blank-ques{
+
+}
+.fill-blank-ques p{
+    font-size: large;
+    margin-bottom: 0.2rem;
+}
+.fill-blank-ques input{
+    width: 100%;
+}
+.select-ques p{
+    font-size: large;
+    margin-bottom: 0.2rem;
+}
+.select-ques select{
+    width: 100%;
+}
+.multiple-choice-ques{
+    background-color: #f1f1f1;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.multiple-choice-ques p{
+    font-size: large;
+    margin-bottom: 0.6rem;
+}
+.multiple-choice-ques label{
+    width: 100%;
+    max-width: 18rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 100rem;
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 0.7rem;
+}
+.multiple-choice-ques label::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 0.6rem;
+}
+.multiple-choice-ques input[type="radio"]{
+    display: none;
+}
+.multiple-choice-ques input[type="radio"]:checked +label{
+    background-color: #ffa500;
+    border: 1px solid #ffa500;
+    color: whitesmoke;
+    font-weight: 600;
+}
+.multiple-choice-ques input[type="radio"]:checked +label::before{
+    border: 6px solid whitesmoke;
+}
+/* .multiple-choice-ques input[type="radio"]{
+    appearance: none;
+    background-color: #fff;
+    margin-right: 0.5rem;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+}
+.multiple-choice-ques input[type="radio"]:checked +label{
+    background-color: #ffa500;
+}
+.multiple-choice-ques input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #ffa500;
+}
+.multiple-choice-ques input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+.multiple-choice-ques input[type="radio"]{
+    
+    display: grid;
+    place-content: center;
+} */

@@ -1,0 +1,50 @@
+<!-- <div>
+  <form action="">
+    <label for="">Batch</label>
+    <input type="text">
+    <label for="">Date posted</label>
+    <input type="date"  [valueAsDate]="currentD">
+    <label for="">Last Date of Submission</label>
+    <input type="date">
+    <label for="">Subject</label>
+    <input type="text" name="" id="">
+    <label for="">Image</label>
+    <input type="file" name="" id="" accept="image/*">
+    <img id="showpreview" alt="">
+    <button type="submit">SUBMIT</button>
+  </form>
+
+</div> -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form action="">
+        <div class="form-group">
+          <label for="">Batch</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Date posted</label>
+          <input type="date" class="form-control" [valueAsDate]="currentD">
+        </div>
+        <div class="form-group">
+          <label for="">Last Date of Submission</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Subject</label>
+          <input type="text" class="form-control" name="" id="">
+        </div>
+        <div class="form-group">
+          <label for="">Image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="" id="" accept="image/*">
+            <label class="custom-file-label" for="">Choose file</label>
+          </div>
+          <img id="showpreview" alt="" class="img-fluid mt-2">
+        </div>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+</div>

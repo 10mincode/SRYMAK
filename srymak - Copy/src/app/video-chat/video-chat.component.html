@@ -1,0 +1,29 @@
+<div class="mainpage">
+  <div></div>
+  <div><div class="d-grid" id="videoGrid" style="grid-auto-rows: 300px; grid-template-columns:repeat(auto-fill,300px)">
+
+  </div></div>
+  <div class="optionsmenu">
+    <div>
+      <h3>10:51 PM | jje-yrcu-oiq</h3>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <button class="optionbtn" title="Hello" >
+        <i class="fas fa-microphone" id="mic-img"></i>
+        <div><span>Toggle Mic (ctrl+m)</span></div>
+      </button>
+      <button class="optionbtn" title="Hello" >
+        <i class="fas fa-video" id="camera-img"></i>
+        <div><span>Toggle Cam (ctrl+e)</span></div>
+      </button>
+      <button class="optionbtn">
+        C
+      </button>
+      <button class="optionbtn">
+        E
+      </button></div>
+    <div></div>
+  </div>
+
+</div>
+<app-toast [text]='toast' *ngFor="let toast of toasts"></app-toast>

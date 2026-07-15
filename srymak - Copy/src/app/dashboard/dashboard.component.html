@@ -1,0 +1,205 @@
+<div class="row justify-content-between">
+  <div style="font-family: 'Lobster', cursive; letter-spacing:0.09rem" class="w-auto">
+    <h1 style="font-weight: 700;margin-bottom:0;">Hello,</h1>
+    <h3 style="font-weight: 700;">{{details.name}}</h3>
+  </div>
+  <div class="col-sm-10 col-md-6 mb-4 d-md-block d-none">
+    <div class=" small-cards bg-danger text-white float-end w-sm-100" style="width:fit-content">
+      <div class="card-body flex" style="width:fit-content">
+        <div style="width:fit-content">
+          <h5 class="card-text">Upcoming : Test</h5>
+          <p class="card-title">Test not yet scheduled. To schedule contact <a class="text-white" href="tel:+917217276506">+917217276506</a></p>
+        </div>
+        <div style="width:fit-content">
+          <button class="btn bg-warning" *ngIf="!linknot"  routerLink="{{details.jlink}}">JOIN CLASS</button>
+          <button class="btn bg-warning opacity-50" *ngIf="linknot" (click)="alert('The button will be enabled before 20min the class')" >JOIN CLASS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-10 col-md-6 mb-4 d-md-none d-flex">
+    <div class=" small-cards bg-danger text-white float-end mw-100" style="width:100%">
+      <div class="card-body flex" style="width:100%">
+        <div style="width:fit-content">
+          <h5 class="card-text">Upcoming : Trial Class</h5>
+          <p class="card-title">Trial class time 4:00 pm.</p>
+        </div>
+        <div style="width:100%">
+          <button class="btn bg-warning" *ngIf="!linknot"  routerLink="{{classjoinLink}}">JOIN CLASS</button>
+          <button class="btn bg-warning opacity-50" *ngIf="linknot" (click)="alert('The button will be enabled before 20min the class')" >JOIN CLASS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-5">
+  <div class="row">
+    <div class="col-sm-6 col-md-3 mb-4">
+      <div class=" small-cards bg-primary text-white">
+        <div class="card-body">
+          <h5 class="card-text">{{details.classestaken}}</h5>
+          <p class="card-title">Classes Completed</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3 mb-4">
+      <div class=" small-cards bg-success text-white">
+        <div class="card-body">
+          <h5 class="card-text">--</h5>
+          <p class="card-title">Attendance Rate</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3 mb-4">
+      <div class=" small-cards bg-warning text-white">
+        <div class="card-body">
+          <h5 class="card-text">--</h5>
+          <p class="card-title">Average Remarks</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3 mb-4">
+      <div class=" small-cards bg-danger text-white">
+        <div class="card-body">
+          <h5 class="card-text">0</h5>
+          <p class="card-title">Assignments Due</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Weekly Schedule</h2>
+  <div class="row">
+    <div class="col day">
+      Monday
+    </div>
+    <div class="col">
+      <div class="event bg-info text-white" *ngFor="let period of course.timetable.mon">
+        {{period}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col day">
+      Tuesday
+    </div>
+    <div class="col">
+      <div class="event bg-warning text-white" *ngFor="let period of course.timetable.tue">
+        {{period}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col day">
+      Wednesday
+    </div>
+    <div class="col">
+      <div class="event bg-success text-white" *ngFor="let period of course.timetable.wed">
+        {{period}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col day">
+      Thursday
+    </div>
+    <div class="col">
+      <div class="event bg-primary text-white" *ngFor="let period of course.timetable.thu">
+        {{period}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col day">
+      Friday
+    </div>
+    <div class="col">
+      <div class="event bg-warning text-white" *ngFor="let period of course.timetable.fri">
+        {{period}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col day">
+      Saturday
+    </div>
+    <div class="col">
+      <div class="event bg-success text-white" *ngFor="let period of course.timetable.sat">
+        {{period}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col day">
+      Sunday
+    </div>
+    <div class="col">
+      <div class="event bg-danger text-white">
+        Holiday
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+
+  <h4 class="mt-4 col-md-6">At the end of the classes, there will be 10 minutes for discussion:<br>
+    <ul>
+      <li>To let the mind get refreshed.</li>
+      <li>To strengthen their confidence.</li>
+      <li>To remove hesitation.</li>
+      <li>To increase the standard of conversation.</li>
+    </ul>
+    So that students would be admiring and be enthusiastic for the next day.
+
+  </h4>
+  <div class="col-12">
+    <h2>OUR FEATURES</h2>
+  </div>
+  <div class="col-md-6 col-sm-12">
+
+    <ul>
+      <li>
+        <h4>Test at every Weekend</h4>
+      </li>
+      <li>
+        <h4>Topicwise Worksheets</h4>
+      </li>
+      <li>
+        <h4>Proper Notes will be Provided</h4>
+      </li>
+      <li>
+        <h4>Classes till the final Exam (Annual Exam)</h4>
+      </li>
+      <li>
+        <h4>Can ask your Doubts Anytime (Even After the Class)</h4>
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <ul>
+      <li>
+        <h4>Regular Update of your Child</h4>
+      </li>
+      <li>
+        <h4>PTM Every Month</h4>
+      </li>
+      <li>
+        <h4>Instant Doubt Clearing (Can ask your doubts as it strikes your mind)</h4>
+      </li>
+      <li>
+        <h4>Quizes on Every Topic</h4>
+      </li>
+      <li>
+        <h4>Upto 15 Students in a class from all over India</h4>
+      </li>
+    </ul>
+  </div>
+  <div style="color:chocolate">
+
+  <h4 style="max-width:100%;width:max-content;color:red">**Note :- Leave will only be provided after receiving the
+    application/Information from parents<br>
+    Otherwise Call Will be there</h4>
+</div>

@@ -1,0 +1,129 @@
+
+<div class="top-section row">
+  <div class="leftside col-md-6 col-xs-12"><img src="../../assets/imageforsot.png"></div>
+  <div class="rightside col-md-6 col-xs-12">
+    <h1>SRYMAK ONLINE TEST</h1>
+    <br>
+      <h3 class="fw-bold text-info">Chance to win Scholarship </h3>
+      <h1 class="fw-bolder text-success">upto ₹21 Lakhs!</h1>
+    <button class="btn enroll-btn" (click)="openOrCloseModal('registermodal')">Register Now</button>
+  </div>
+</div>
+<div class="section row">
+  <div class="leftside col-md-6 col-xs-12"><img src="../../assets/imageforsot.png"></div>
+  <div class="rightside col-md-6 col-xs-12">
+    <form>
+
+      <input type="file" name="profile" (change)="onChange($event)" />
+      <button type="submit">Upload Image File</button>
+
+    </form>
+  </div>
+</div>
+<div class="modalm" id="registermodal">
+    <div class="modalm-content row justify-content-center align-items-center p-2 ">
+      <a class="close-btn w-auto" (click)="openOrCloseModal('registermodal')"> <i class="fas fa-times text-danger" ></i> </a>
+
+      <div class="quiz-div col-lg-8 col-md-9 col-sm-11 p-2 p-md-3 w-100">
+        <div class="quiz-header p-3">
+          <h2>SOT Registration</h2>
+          <p>Srymak Online Test registration form.</p>
+      </div>
+      <div class="quiz-user-details row">
+          <div class="fill-blank-ques p-3 text-start col-sm-12">
+              <p>Candidate name
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12">
+              <p>Mother's name
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12">
+              <p>Father's name
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12 col-md-6">
+              <p>Mobile Number
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12 col-md-6">
+              <p>Email
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12">
+              <p>School Name
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="select-ques p-3 text-start col-sm-12 col-md-6">
+              <p>Class in (Session 2022-23)
+                  <span class="required">*</span>
+              </p>
+              <select name="" id="" class="p-2">
+                <option value="">--Select Class--</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+              </select>
+          </div>
+          <div class="select-ques p-3 text-start col-sm-12 col-md-6">
+              <p>Test
+                  <span class="required">*</span>
+              </p>
+              <select name="" id="" class="p-2">
+                <option value="">--Select Test--</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11 and 12 PCM</option>
+              </select>
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12 col-md-6">
+              <p>City
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12 col-md-6">
+              <p>State
+                  <span class="required">*</span>
+              </p>
+              <input type="text" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12 col-md-6">
+              <p>Student Photo
+                  <span class="required">*</span>
+              </p>
+              <input type="file" class="p-2">
+          </div>
+          <div class="fill-blank-ques p-3 text-start col-sm-12 col-md-6">
+              <p>Student Signature
+                  <span class="required">*</span>
+              </p>
+              <input type="file" class="p-2">
+          </div>
+      </div>
+          <hr>
+          <div class="quiz-submit mt-3">
+              <button type="submit" class="p-3">SUBMIT</button>
+          </div>
+      </div>
+  </div>
+</div>

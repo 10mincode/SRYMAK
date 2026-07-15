@@ -1,0 +1,11 @@
+<div class="review-card">
+  <img src="{{review.img}}">
+  <div class="review-card-header mt-3">
+    <h4>{{review.name}}</h4>
+  </div>
+  <div class="review-card-body" id="review-card-body">
+    <p *ngIf="(review.text.length<=220) && !readmore">{{review.text}}<br></p>
+    <p *ngIf="readmore">{{review.text}}<br></p>
+    <p *ngIf="(review.text.length>220) && !readmore">{{review.text.slice(0,220)}}...<br><a style="font-weight: bold; cursor:pointer;" (click)="readMore()">Read more</a></p>
+  </div>
+</div>
